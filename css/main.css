@@ -971,8 +971,9 @@ pre .javascript .function {
   bottom: 19px;
 }
 .header {
+  height: 340px;
   background: url("http://omg6y9je2.bkt.clouddn.com/header_bg.png") no-repeat;
-  background-color: #57c1fd;
+  background-color: #2b9ccc;
 }
 .header-inner {
   position: relative;
@@ -1717,7 +1718,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #69a305;
+  background: #7dffd4;
 }
 .links-of-blogroll {
   font-size: 13px;
