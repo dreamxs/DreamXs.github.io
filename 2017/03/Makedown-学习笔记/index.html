@@ -1,0 +1,922 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="makedown,笔记," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://omg6y9je2.bkt.clouddn.com/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Makedown学习笔记，供自己练习使用最近刚刚接触HEXO搭建了个人博客。作为一个目前为止还是个伪码农的小菜鸟，世界那么大，好多东西都要学。那么久先从简单点的makedown入手，开始一步一步的coding之路。相互学习，共同进步。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Makedown 学习笔记">
+<meta property="og:url" content="http://dreamxs.github.io/2017/03/Makedown-学习笔记/index.html">
+<meta property="og:site_name" content="Dreamxs">
+<meta property="og:description" content="Makedown学习笔记，供自己练习使用最近刚刚接触HEXO搭建了个人博客。作为一个目前为止还是个伪码农的小菜鸟，世界那么大，好多东西都要学。那么久先从简单点的makedown入手，开始一步一步的coding之路。相互学习，共同进步。">
+<meta property="og:image" content="http://dreamxs.github.io/../../../image/next-organ.png">
+<meta property="og:image" content="http://dreamxs.github.io/../../../image/next-organ.png">
+<meta property="og:image" content="http://dreamxs.github.io/../makedown/next-organ.png">
+<meta property="og:image" content="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2094204188,1344679959&fm=80&w=179&h=119&img.JPEG">
+<meta property="og:image" content="http://www.w3school.com.cn/i/eg_tulip.jpg">
+<meta property="og:updated_time" content="2017-03-19T10:37:03.468Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Makedown 学习笔记">
+<meta name="twitter:description" content="Makedown学习笔记，供自己练习使用最近刚刚接触HEXO搭建了个人博客。作为一个目前为止还是个伪码农的小菜鸟，世界那么大，好多东西都要学。那么久先从简单点的makedown入手，开始一步一步的coding之路。相互学习，共同进步。">
+<meta name="twitter:image" content="http://dreamxs.github.io/../../../image/next-organ.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://dreamxs.github.io/2017/03/Makedown-学习笔记/"/>
+
+
+
+
+
+  <title> Makedown 学习笔记 | Dreamxs </title>
+  
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  <a href="https://github.com/dreamxs"><img style="position: absolute; top: 0; right: 0; border: 0;z-index: 9;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dreamxs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生命不息，Coding不止...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://dreamxs.github.io/2017/03/Makedown-学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dreamxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dreamxs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Makedown 学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T21:18:50+08:00">
+                2017-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/makedown/" itemprop="url" rel="index">
+                    <span itemprop="name">makedown</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+
+          
+            
+          
+
+          
+          
+
+	  
+<!-- 以下部分为：字数统计、阅读时长插入代码  -->
+         <span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">1,791(字)</span>
+           
+         </span>
+	  
+      <span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">阅读时长:</span>
+           <span class="post-count">7(分)</span>
+           
+         </span>
+<!-- 以上部分为：字数统计、阅读时长插入代码  -->
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Makedown学习笔记，供自己练习使用"><a href="#Makedown学习笔记，供自己练习使用" class="headerlink" title="Makedown学习笔记，供自己练习使用"></a>Makedown学习笔记，供自己练习使用</h1><p>最近刚刚接触HEXO搭建了个人博客。<br>作为一个目前为止还是个伪码农的小菜鸟，世界那么大，好多东西都要学。<br><br>那么久先从简单点的makedown入手，开始一步一步的coding之路。<br>相互学习，共同进步。<br><img src="../../../image/next-organ.png" alt="相对路径图片" title="next图片"><br><a id="more"></a></p>
+<h2 id="段落和换行"><a href="#段落和换行" class="headerlink" title="段落和换行"></a>段落和换行</h2><p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。    </p>
+<p>比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进,文本需要贴边。   </p>
+<p>「由一个或多个连续的文本行组成」这句话其实暗示了 Markdown 允许段落内的强迫换行（括号后插入了换行符<code>&lt;br /&gt;</code>），<br>这个特性和其他大部分的 text-to-HTML 格式不一样（包括 Movable Type 的「Convert Line Breaks」选项），其它的格式会把每个换行符都转成标签。</p>
+<h2 id="标题样式"><a href="#标题样式" class="headerlink" title="标题样式"></a>标题样式</h2><p>可以选择性地「闭合」类 atx 样式的标题，这纯粹只是美观用的，若是觉得这样看起来比较舒适，你就可以在行尾加上 #，而行尾的# 数量也不用和开头一样（行首的井字符数量决定标题的阶数）。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># H1标题 或者 # H1 #</span></div><div class="line"><span class="comment">## H1标题 或者 ## H2 #</span></div><div class="line"><span class="comment">### H1标题 或者 ### H3 #</span></div><div class="line"><span class="comment">#### H1标题 或者 #### H4 #</span></div><div class="line"><span class="comment">##### H1标题 或者 ##### H5 # </span></div><div class="line"><span class="comment">###### H1标题 或者 ###### H6 #</span></div></pre></td></tr></table></figure></p>
+<p>标题相对大小实测如下，具体大小会和主题的字体设置大小有关。</p>
+<h1 id="H1标题"><a href="#H1标题" class="headerlink" title="H1标题"></a>H1标题</h1><h2 id="H2标题"><a href="#H2标题" class="headerlink" title="H2标题"></a>H2标题</h2><h3 id="H3标题"><a href="#H3标题" class="headerlink" title="H3标题"></a>H3标题</h3><h4 id="H4标题"><a href="#H4标题" class="headerlink" title="H4标题"></a>H4标题</h4><h5 id="H5标题"><a href="#H5标题" class="headerlink" title="H5标题"></a>H5标题</h5><h6 id="H6标题"><a href="#H6标题" class="headerlink" title="H6标题"></a>H6标题</h6><h2 id="区块引用-Blockquotes"><a href="#区块引用-Blockquotes" class="headerlink" title="区块引用 Blockquotes"></a>区块引用 Blockquotes</h2><p>在将你想要的引用的文字块之前贴边加上一个<code>&gt;</code>符号，示例如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">  &gt;Discard time, the time he has abandoned Discard time, and time is up to him.</div><div class="line">  &gt;——莎士比亚</div><div class="line">```     </div><div class="line"></div><div class="line"></div><div class="line">&gt;Discard time, the time he has abandoned Discard time, and time is up to him.</div><div class="line">&gt;——莎士比亚                </div><div class="line"></div><div class="line"></div><div class="line">引用之内也可以嵌套多层引用和使用其他makedown标签如 标题 列表 代码块       </div><div class="line">``` bash</div><div class="line">&gt; <span class="comment">## 第一层引用</span></div><div class="line">&gt; </div><div class="line">&gt;&gt; <span class="comment">### 第二层引用</span></div><div class="line">&gt;&gt; 1.   这是第一行列表项。</div><div class="line">&gt;&gt; 2.   这是第二行列表项。</div><div class="line">&gt; </div><div class="line">&gt; 回到第一层</div><div class="line">&gt; <span class="comment">## 其他makedown代码</span></div><div class="line">&gt;   `这是一个code标签，使用一对反引号。`</div></pre></td></tr></table></figure></p>
+<blockquote>
+<h2 id="第一层引用"><a href="#第一层引用" class="headerlink" title="第一层引用"></a>第一层引用</h2><blockquote>
+<h3 id="第二层引用"><a href="#第二层引用" class="headerlink" title="第二层引用"></a>第二层引用</h3><ol>
+<li>这是第一行列表项。</li>
+<li>这是第二行列表项。</li>
+</ol>
+</blockquote>
+<p>回到第一层</p>
+<h2 id="其他makedown代码"><a href="#其他makedown代码" class="headerlink" title="其他makedown代码"></a>其他makedown代码</h2><p><code>这是一个code标签，使用一对反引号。</code>        </p>
+</blockquote>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>makedown支持ul（无序列表）和ol（有序列表）。书写形式如下：</p>
+<pre><code class="bash">1. 无序列表使用星号、加号或是减号接空格作为列表标记：
+ *  li1    等同          +  li1    等同           -  li1 
+ *  li1    等同          +  li2    等同           -  li2
+ *  li1    等同          +  li3    等同           -  li3 
+2. 有序列表使用数字加句点 <span class="string">"."</span>接空格，建议第一个项目（li1）数字使用1开头，虽然每个项目之前的数字都互不相关，可以是任意数字。
+ 1. 这是ol下第一个li
+ 2. 这是ol下第二个li
+ 1. 这是ol下第三个li
+注意: 当使用数字接句点接空格开头的段落时，如：2017. 我的blog生涯开启。为避免与解释成有序列表，必须用反斜杠转义句点
+2017\. 我的blog生涯开启。
+
+* 第一个li 
+1. ol&gt;li
+2. ol&gt;li
+4. ol&gt;li（这里紧跟的一个有序列表，将第一无序列表隔断，其实这里是一个ul（只有一个li）和一个ol（含有三个li）并列，属于同级）
+
+* 第二个li （由于上面的关系，这里是另起的一个ul和上面的ul ol并列，属于同级）
+  1. ol&gt;li
+  2. ol&gt;li
+  5. ol&gt;li（这个具有3个li的ol属于二级嵌套，是第一层ul下的第一个li下的子元素）
+* 第三个li
+    1. ol&gt;li
+    2. ol&gt;li
+    3. ol&gt;li（这个具有3个li的ol属于二级嵌套，是第一层ul下的第二个li下的子元素）
+
+2017. 我的blog生涯开启。
+2017\. 我的blog生涯开启。    (这段话被包在了上一个生成的ol下的li里，必要时每个li需要用空行隔开)
+具体结构如下
+&lt;ol&gt;
+    &lt;li&gt;我的blog生涯开启
+    &lt;br /&gt;
+    2017. 我的blog生涯开启。
+    &lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<hr>
+<ul>
+<li>第一个li </li>
+</ul>
+<ol>
+<li>ol&gt;li</li>
+<li>ol&gt;li</li>
+<li>ol&gt;li</li>
+</ol>
+<ul>
+<li>第二个li <ol>
+<li>ol&gt;li</li>
+<li>ol&gt;li</li>
+<li>ol&gt;li</li>
+</ol>
+</li>
+<li>第三个li<ol>
+<li>ol&gt;li</li>
+<li>ol&gt;li</li>
+<li>ol&gt;li</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li>我的blog生涯开启。<br>2017. 我的blog生涯开启。    </li>
+</ol>
+<p>其他注意事项请参见<a href="http://www.w3cschool.cn/markdownyfsm/gik1e4.html" title="makedown 列表注意事项" target="_blank" rel="external">W3C</a></p>
+<h2 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h2><p>makedown会用<code>&lt;pre&gt;</code>包裹多行源代码，<code>&lt;code&gt;</code>包裹单行代码块。<br>要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以。<br>    这之前敲了一个Tab<br>    接上行回车</p>
+<pre><code>这之前敲了4个space
+</code></pre><p><code>这里使用\</code>` 一对反冒号`       </p>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><pre><code>* * *
+---  三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西
+-----------------
+</code></pre><hr>
+<hr>
+<hr>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>Markdown 支持两种形式的链接语法： 行内式和参考式两种形式。不管是哪一种，链接文字都是用 [方括号] 来标记。<br>要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：</p>
+<h3 id="链接式"><a href="#链接式" class="headerlink" title="链接式"></a>链接式</h3><pre><code>这是[百度链接](baidu.com &quot;baidu&quot;)...
+这是[W3C](http://www.w3cschool.cn)没有title属性   
+</code></pre><p>这是<a href="http://www.baidu.com" title="baidu" target="_blank" rel="external">百度链接</a>…<br>这是<a href="http://www.w3cschool.cn" target="_blank" rel="external">W3C</a>没有title属性<br>这里<a href="../../tage">是相对链接到tags</a>到tag页面</p>
+<h3 id="参考式"><a href="#参考式" class="headerlink" title="参考式"></a>参考式</h3><p>方括号（前面可以选择性地加上至多三个空格来缩进），里面输入链接文字<br>接着一个冒号<br>接着一个以上的空格或制表符<br>接着链接的网址<br>选择性地接着 title 内容，可以用单引号、双引号或是括弧包着</p>
+<pre><code>I get 10 times more traffic from [Google] [1] than from [Yahoo] [2] or [MSN] [3].
+
+ [1]: http://google.com/        &quot;Google&quot;        说明: 这里的链接代码块可以放在文章的最后                                     
+ [2]: http://search.yahoo.com/  (Yahoo Search)
+ [3]: http://search.msn.com/    &quot;MSN Search&quot;
+</code></pre><p>I get 10 times more traffic from <a href="http://google.com/" title="Google" target="_blank" rel="external">Google</a> than from <a href="http://search.yahoo.com/" title="Yahoo Search" target="_blank" rel="external">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search" target="_blank" rel="external">MSN</a>.</p>
+<h2 id="强调标签"><a href="#强调标签" class="headerlink" title="强调标签"></a>强调标签</h2><pre><code>*single asterisks*       解析成&lt;em&gt;single asterisks&lt;em&gt;      
+_single underscores_     解析成&lt;em&gt;single underscores&lt;em&gt;           
+**double asterisks**     解析成&lt;strong&gt;double asterisks&lt;strong&gt;     
+__double underscores__   解析成&lt;strong&gt;double underscores&lt;strong&gt;                               
+</code></pre><p><em>single asterisks</em><br><em>single underscores</em><br><strong>double asterisks</strong><br><strong>double underscores</strong></p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><pre><code>书写方式和链接相似 在中括号之前添加“！”，例如:
+链接式：
+![Alt text](/path/to/img.jpg)
+![Alt text](/path/to/img.jpg &quot;Optional title&quot;)
+参考式:
+![Alt text][id]
+[id]: url/to/image  &quot;Optional title attribute&quot;
+支持自定义宽高，需使用html的`&lt;img&gt;`                                                                                               
+ ![相对路径图片](../../../image/next-organ.png &quot;next图片&quot;)   source目录下的image图片
+ ![相对路径图片](./makedown/next-organ.png)       _post/Makedown-学习笔记（当前文章地址）/makedown 图片                 
+ ![网络地址图片](https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2094204188,1344679959&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG  &quot;百度链接&quot;)     
+ &lt;img src=&quot;http://www.w3school.com.cn/i/eg_tulip.jpg&quot;  alt=&quot;img标签&quot; title=&quot;imgtitle&quot; width=400 height=300/&gt;                                                                                      
+</code></pre><p><img src="../../../image/next-organ.png" alt="相对路径图片" title="next图片"><br><img src="../makedown/next-organ.png" alt="相对路径图片" title="next图片"><br><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2094204188,1344679959&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG" alt="网络地址图片" title="百度链接"><br><img src="http://www.w3school.com.cn/i/eg_tulip.jpg" alt="img标签" title="imgtitle" width="400" height="300/"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        ﻿<div align="center">
+ 
+   <div class="">
+   <p><span>
+    <b>本文地址:</b><a href="/2017/03/Makedown-学习笔记/" title="Makedown 学习笔记">http://dreamxs.github.io/2017/03/Makedown-学习笔记/</a><br/><b>转载请注明出处,谢谢分享!</b>
+    </span></p>
+   </div>
+ 
+</div>
+    
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>粮草短缺，多谢支持！oTZ.</div>
+    <button id="rewardButton" disable="enable" onclick=" var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';this.innerHTML='不赏';} else {qr.style.display='none';this.innerHTML='赏!';}">
+     不赏
+    </button>
+    <div id="QR" style="display: block;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://omg6y9je2.bkt.clouddn.com/weixin.png" alt="Dreamxs WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://omg6y9je2.bkt.clouddn.com/zhifubao.png" alt="Dreamxs Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/makedown/" rel="tag"># makedown</a>
+          
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/my-first-post/" rel="next" title="my first post">
+                <i class="fa fa-chevron-left"></i> my first post
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/培训日常唠叨/" rel="prev" title="培训日常唠叨">
+                培训日常唠叨 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Dreamxs" />
+          <p class="site-author-name" itemprop="name">Dreamxs</p>
+           
+              <p class="site-description motion-element" itemprop="description">码渣    丨     搬运工     丨    次元控      丨    美剧爱好者</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/dreamxs" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        <div class="fluid-vids" style="position: relative; margin-bottom: 20px; width: 100%;">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86 src="//music.163.com/outchain/player?type=2&id=22677443&auto=0&height=66"></iframe>
+</div>
+        
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Makedown学习笔记，供自己练习使用"><span class="nav-number">1.</span> <span class="nav-text">Makedown学习笔记，供自己练习使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#段落和换行"><span class="nav-number">1.1.</span> <span class="nav-text">段落和换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标题样式"><span class="nav-number">1.2.</span> <span class="nav-text">标题样式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#H1标题"><span class="nav-number">2.</span> <span class="nav-text">H1标题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#H2标题"><span class="nav-number">2.1.</span> <span class="nav-text">H2标题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#H3标题"><span class="nav-number">2.1.1.</span> <span class="nav-text">H3标题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#H4标题"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">H4标题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#H5标题"><span class="nav-number">2.1.1.1.1.</span> <span class="nav-text">H5标题</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#H6标题"><span class="nav-number">2.1.1.1.1.1.</span> <span class="nav-text">H6标题</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块引用-Blockquotes"><span class="nav-number">2.2.</span> <span class="nav-text">区块引用 Blockquotes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一层引用"><span class="nav-number">2.3.</span> <span class="nav-text">第一层引用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第二层引用"><span class="nav-number">2.3.1.</span> <span class="nav-text">第二层引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他makedown代码"><span class="nav-number">2.4.</span> <span class="nav-text">其他makedown代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">2.5.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码区块"><span class="nav-number">2.6.</span> <span class="nav-text">代码区块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分割线"><span class="nav-number">2.7.</span> <span class="nav-text">分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">2.8.</span> <span class="nav-text">链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链接式"><span class="nav-number">2.8.1.</span> <span class="nav-text">链接式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考式"><span class="nav-number">2.8.2.</span> <span class="nav-text">参考式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强调标签"><span class="nav-number">2.9.</span> <span class="nav-text">强调标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片"><span class="nav-number">2.10.</span> <span class="nav-text">图片</span></a></li></ol></li></ol></div>
+                       
+          </div>
+          
+          
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dreamxs</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="https://github.com/hustcc/canvas-nest.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+<script type="text/javascript" color="101,153,255" opacity='1' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+</body>
+</html>
