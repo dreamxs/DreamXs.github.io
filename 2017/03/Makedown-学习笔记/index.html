@@ -98,7 +98,7 @@
 <meta property="og:image" content="http://dreamxs.github.io/./makedown/next-organ.png">
 <meta property="og:image" content="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2094204188,1344679959&fm=80&w=179&h=119&img.JPEG">
 <meta property="og:image" content="http://www.w3school.com.cn/i/eg_tulip.jpg">
-<meta property="og:updated_time" content="2017-03-19T14:21:47.246Z">
+<meta property="og:updated_time" content="2017-03-21T01:38:16.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Makedown 学习笔记">
 <meta name="twitter:description" content="Makedown学习笔记，供自己练习使用最近刚刚接触HEXO搭建了个人博客。作为一个目前为止还是个伪码农的小菜鸟，世界那么大，好多东西都要学。那么久先从简单点的makedown入手，开始一步一步的coding之路。相互学习，共同进步。">
@@ -384,7 +384,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">1,791(字)</span>
+           <span class="post-count">1,789(字)</span>
            
          </span>
 	  
@@ -420,9 +420,26 @@
 <h2 id="段落和换行"><a href="#段落和换行" class="headerlink" title="段落和换行"></a>段落和换行</h2><p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。    </p>
 <p>比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进,文本需要贴边。   </p>
 <p>「由一个或多个连续的文本行组成」这句话其实暗示了 Markdown 允许段落内的强迫换行（括号后插入了换行符<code>&lt;br /&gt;</code>），<br>这个特性和其他大部分的 text-to-HTML 格式不一样（包括 Movable Type 的「Convert Line Breaks」选项），其它的格式会把每个换行符都转成标签。</p>
-<h2 id="标题样式"><a href="#标题样式" class="headerlink" title="标题样式"></a>标题样式</h2><p>可以选择性地「闭合」类 atx 样式的标题，这纯粹只是美观用的，若是觉得这样看起来比较舒适，你就可以在行尾加上 #，而行尾的# 数量也不用和开头一样（行首的井字符数量决定标题的阶数）。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># H1标题 或者 # H1 #</span></div><div class="line"><span class="comment">## H1标题 或者 ## H2 #</span></div><div class="line"><span class="comment">### H1标题 或者 ### H3 #</span></div><div class="line"><span class="comment">#### H1标题 或者 #### H4 #</span></div><div class="line"><span class="comment">##### H1标题 或者 ##### H5 # </span></div><div class="line"><span class="comment">###### H1标题 或者 ###### H6 #</span></div></pre></td></tr></table></figure></p>
+<h2 id="标题样式"><a href="#标题样式" class="headerlink" title="标题样式"></a>标题样式</h2><p>可以选择性地「闭合」类 atx 样式的标题，这纯粹只是美观用的，若是觉得这样看起来比较舒适，你就可以在行尾加上 #，而行尾的# 数量也不用和开头一样（行首的井字符数量决定标题的阶数）。<br><figure class="highlight md"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="section"># H1标题 或者 # H1 #</span></div><div class="line"><span class="section">## H1标题 或者 ## H2 #</span></div><div class="line"><span class="section">### H1标题 或者 ### H3 #</span></div><div class="line"><span class="section">#### H1标题 或者 #### H4 #</span></div><div class="line"><span class="section">##### H1标题 或者 ##### H5 # </span></div><div class="line"><span class="section">###### H1标题 或者 ###### H6 #</span></div></pre></td></tr></table></figure></p>
 <p>标题相对大小实测如下，具体大小会和主题的字体设置大小有关。</p>
-<h1 id="H1标题"><a href="#H1标题" class="headerlink" title="H1标题"></a>H1标题</h1><h2 id="H2标题"><a href="#H2标题" class="headerlink" title="H2标题"></a>H2标题</h2><h3 id="H3标题"><a href="#H3标题" class="headerlink" title="H3标题"></a>H3标题</h3><h4 id="H4标题"><a href="#H4标题" class="headerlink" title="H4标题"></a>H4标题</h4><h5 id="H5标题"><a href="#H5标题" class="headerlink" title="H5标题"></a>H5标题</h5><h6 id="H6标题"><a href="#H6标题" class="headerlink" title="H6标题"></a>H6标题</h6><h2 id="区块引用-Blockquotes"><a href="#区块引用-Blockquotes" class="headerlink" title="区块引用 Blockquotes"></a>区块引用 Blockquotes</h2><p>在将你想要的引用的文字块之前贴边加上一个<code>&gt;</code>符号，示例如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">  &gt;Discard time, the time he has abandoned Discard time, and time is up to him.</div><div class="line">  &gt;——莎士比亚</div><div class="line">```     </div><div class="line"></div><div class="line"></div><div class="line">&gt;Discard time, the time he has abandoned Discard time, and time is up to him.</div><div class="line">&gt;——莎士比亚                </div><div class="line"></div><div class="line"></div><div class="line">引用之内也可以嵌套多层引用和使用其他makedown标签如 标题 列表 代码块       </div><div class="line">``` bash</div><div class="line">&gt; <span class="comment">## 第一层引用</span></div><div class="line">&gt; </div><div class="line">&gt;&gt; <span class="comment">### 第二层引用</span></div><div class="line">&gt;&gt; 1.   这是第一行列表项。</div><div class="line">&gt;&gt; 2.   这是第二行列表项。</div><div class="line">&gt; </div><div class="line">&gt; 回到第一层</div><div class="line">&gt; <span class="comment">## 其他makedown代码</span></div><div class="line">&gt;   `这是一个code标签，使用一对反引号。`</div></pre></td></tr></table></figure></p>
+<h1 id="H1标题"><a href="#H1标题" class="headerlink" title="H1标题"></a>H1标题</h1><h2 id="H2标题"><a href="#H2标题" class="headerlink" title="H2标题"></a>H2标题</h2><h3 id="H3标题"><a href="#H3标题" class="headerlink" title="H3标题"></a>H3标题</h3><h4 id="H4标题"><a href="#H4标题" class="headerlink" title="H4标题"></a>H4标题</h4><h5 id="H5标题"><a href="#H5标题" class="headerlink" title="H5标题"></a>H5标题</h5><h6 id="H6标题"><a href="#H6标题" class="headerlink" title="H6标题"></a>H6标题</h6><h2 id="区块引用-Blockquotes"><a href="#区块引用-Blockquotes" class="headerlink" title="区块引用 Blockquotes"></a>区块引用 Blockquotes</h2><p>在将你想要的引用的文字块之前贴边加上一个<code>&gt;</code>符号，示例如下:</p>
+<pre><code class="bash">&gt;Discard time, the time he has abandoned Discard time, and time is up to him.
+&gt;——莎士比亚
+</code></pre>
+<blockquote>
+<p>Discard time, the time he has abandoned Discard time, and time is up to him.<br>——莎士比亚                </p>
+</blockquote>
+<p>引用之内也可以嵌套多层引用和使用其他makedown标签如 标题 列表 代码块       </p>
+<pre><code class="md"><span class="quote">&gt; ## 第一层引用</span>
+<span class="quote">&gt; 
+&gt;&gt; ### 第二层引用</span>
+&gt;&gt; 1.   这是第一行列表项。
+&gt;&gt; 2.   这是第二行列表项。
+<span class="quote">&gt; 
+&gt; 回到第一层</span>
+<span class="quote">&gt; ## 其他makedown代码</span>
+<span class="quote">&gt;   `这是一个code标签，使用一对反引号。\`</span>
+</code></pre>
 <blockquote>
 <h2 id="第一层引用"><a href="#第一层引用" class="headerlink" title="第一层引用"></a>第一层引用</h2><blockquote>
 <h3 id="第二层引用"><a href="#第二层引用" class="headerlink" title="第二层引用"></a>第二层引用</h3><ol>
@@ -434,39 +451,39 @@
 <h2 id="其他makedown代码"><a href="#其他makedown代码" class="headerlink" title="其他makedown代码"></a>其他makedown代码</h2><p><code>这是一个code标签，使用一对反引号。</code>        </p>
 </blockquote>
 <h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>makedown支持ul（无序列表）和ol（有序列表）。书写形式如下：</p>
-<pre><code class="bash">1. 无序列表使用星号、加号或是减号接空格作为列表标记：
+<pre><code class="md"><span class="bullet">1. </span>无序列表使用星号、加号或是减号接空格作为列表标记：
  *  li1    等同          +  li1    等同           -  li1 
  *  li1    等同          +  li2    等同           -  li2
  *  li1    等同          +  li3    等同           -  li3 
-2. 有序列表使用数字加句点 <span class="string">"."</span>接空格，建议第一个项目（li1）数字使用1开头，虽然每个项目之前的数字都互不相关，可以是任意数字。
+<span class="bullet">2. </span>有序列表使用数字加句点 "."接空格，建议第一个项目（li1）数字使用1开头，虽然每个项目之前的数字都互不相关，可以是任意数字。
  1. 这是ol下第一个li
  2. 这是ol下第二个li
  1. 这是ol下第三个li
 注意: 当使用数字接句点接空格开头的段落时，如：2017. 我的blog生涯开启。为避免与解释成有序列表，必须用反斜杠转义句点
 2017\. 我的blog生涯开启。
 
-* 第一个li 
-1. ol&gt;li
-2. ol&gt;li
-4. ol&gt;li（这里紧跟的一个有序列表，将第一无序列表隔断，其实这里是一个ul（只有一个li）和一个ol（含有三个li）并列，属于同级）
+<span class="bullet">* </span>第一个li 
+<span class="bullet">1. </span>ol&gt;li
+<span class="bullet">2. </span>ol&gt;li
+<span class="bullet">4. </span>ol&gt;li（这里紧跟的一个有序列表，将第一无序列表隔断，其实这里是一个ul（只有一个li）和一个ol（含有三个li）并列，属于同级）
 
-* 第二个li （由于上面的关系，这里是另起的一个ul和上面的ul ol并列，属于同级）
+<span class="bullet">* </span>第二个li （由于上面的关系，这里是另起的一个ul和上面的ul ol并列，属于同级）
   1. ol&gt;li
   2. ol&gt;li
   5. ol&gt;li（这个具有3个li的ol属于二级嵌套，是第一层ul下的第一个li下的子元素）
-* 第三个li
-    1. ol&gt;li
-    2. ol&gt;li
-    3. ol&gt;li（这个具有3个li的ol属于二级嵌套，是第一层ul下的第二个li下的子元素）
+<span class="bullet">* </span>第三个li
+<span class="code">    1. ol&gt;li</span>
+<span class="code">    2. ol&gt;li</span>
+<span class="code">    3. ol&gt;li（这个具有3个li的ol属于二级嵌套，是第一层ul下的第二个li下的子元素）</span>
 
-2017. 我的blog生涯开启。
+<span class="bullet">2017. </span>我的blog生涯开启。
 2017\. 我的blog生涯开启。    (这段话被包在了上一个生成的ol下的li里，必要时每个li需要用空行隔开)
 具体结构如下
 &lt;ol&gt;
-    &lt;li&gt;我的blog生涯开启
-    &lt;br /&gt;
-    2017. 我的blog生涯开启。
-    &lt;/li&gt;
+<span class="code">    &lt;li&gt;我的blog生涯开启</span>
+<span class="code">    &lt;br /&gt;</span>
+<span class="code">    2017. 我的blog生涯开启。</span>
+<span class="code">    &lt;/li&gt;</span>
 &lt;/ol&gt;
 </code></pre>
 <hr>
@@ -686,7 +703,7 @@ __double underscores__   解析成&lt;strong&gt;double underscores&lt;strong&gt;
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -697,7 +714,7 @@ __double underscores__   解析成&lt;strong&gt;double underscores&lt;strong&gt;
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -708,7 +725,7 @@ __double underscores__   解析成&lt;strong&gt;double underscores&lt;strong&gt;
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
