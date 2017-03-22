@@ -1,0 +1,982 @@
+
+<!doctype html>
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="笔记,Oracle," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://omg6y9je2.bkt.clouddn.com/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Oracle 简介Oracle Database，又名Oracle RDBMS，或简称Oracle。是甲骨文公司的一款关系数据库管理系统。它是在数据库领域一直处于领先地位的产品。可以说Oracle数据库系统是目前世界上流行的关系数据库管理系统，系统可移植性好、使用方便、功能强，适用于各类大、中、小、微机环境。它是一种高效率、可靠性好的 适应高吞吐量的数据库解决方案。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle 笔记">
+<meta property="og:url" content="http://dreamxs.github.io/2017/03/Oracle-笔记/index.html">
+<meta property="og:site_name" content="Dreamxs">
+<meta property="og:description" content="Oracle 简介Oracle Database，又名Oracle RDBMS，或简称Oracle。是甲骨文公司的一款关系数据库管理系统。它是在数据库领域一直处于领先地位的产品。可以说Oracle数据库系统是目前世界上流行的关系数据库管理系统，系统可移植性好、使用方便、功能强，适用于各类大、中、小、微机环境。它是一种高效率、可靠性好的 适应高吞吐量的数据库解决方案。">
+<meta property="og:image" content="http://dreamxs.github.io/2017/03/Oracle-笔记/oracle/oracle_database_11g.gif">
+<meta property="og:image" content="http://dreamxs.github.io/2017/03/Oracle-笔记/oracle/duan.png">
+<meta property="og:image" content="http://dreamxs.github.io/2017/03/Oracle-笔记/oracle/oracleblock.png">
+<meta property="og:updated_time" content="2017-03-22T14:18:27.762Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle 笔记">
+<meta name="twitter:description" content="Oracle 简介Oracle Database，又名Oracle RDBMS，或简称Oracle。是甲骨文公司的一款关系数据库管理系统。它是在数据库领域一直处于领先地位的产品。可以说Oracle数据库系统是目前世界上流行的关系数据库管理系统，系统可移植性好、使用方便、功能强，适用于各类大、中、小、微机环境。它是一种高效率、可靠性好的 适应高吞吐量的数据库解决方案。">
+<meta name="twitter:image" content="http://dreamxs.github.io/2017/03/Oracle-笔记/oracle/oracle_database_11g.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '7356575076d7582df1384dfbcdbaaad0',
+      author: '菜鸡博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://dreamxs.github.io/2017/03/Oracle-笔记/"/>
+
+
+
+
+
+  <title> Oracle 笔记 | Dreamxs </title>
+  
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+  <a href="https://github.com/dreamxs"><img style="position: absolute; top: 0; right: 0; border: 0;z-index: 9;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dreamxs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生命不息，Coding不止...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://dreamxs.github.io/2017/03/Oracle-笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dreamxs">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dreamxs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Oracle 笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-21T14:04:52+08:00">
+                2017-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">Oracle</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/Oracle-笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/Oracle-笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+	  
+<!-- 以下部分为：字数统计、阅读时长插入代码  -->
+         <span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">字数统计:</span>
+           <span class="post-count">2,644(字)</span>
+           
+         </span>
+	  
+      <span class="post-time">
+	   &nbsp; | &nbsp;
+           <span class="post-meta-item-icon">
+             <i class="fa fa-calendar-o"></i>
+           </span>
+           <span class="post-meta-item-text">阅读时长:</span>
+           <span class="post-count">10(分)</span>
+           
+         </span>
+<!-- 以上部分为：字数统计、阅读时长插入代码  -->
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Oracle-简介"><a href="#Oracle-简介" class="headerlink" title="Oracle 简介"></a>Oracle 简介</h1><p>Oracle Database，又名Oracle RDBMS，或简称Oracle。是甲骨文公司的一款关系数据库管理系统。它是在数据库领域一直处于领先地位的产品。可以说Oracle数据库系统是目前世界上流行的关系数据库管理系统，系统可移植性好、使用方便、功能强，适用于各类大、中、小、微机环境。它是一种高效率、可靠性好的 适应高吞吐量的数据库解决方案。</p>
+<p><img src="/2017/03/Oracle-笔记/oracle/oracle_database_11g.gif" alt="oracle"><br><a id="more"></a></p>
+<h2 id="Oracle-基本术语"><a href="#Oracle-基本术语" class="headerlink" title="Oracle 基本术语"></a>Oracle 基本术语</h2><h3 id="数据字典"><a href="#数据字典" class="headerlink" title="数据字典"></a>数据字典</h3><p>数据字典（data dictionary）是数据库中所有对象及其关系的信息集合。</p>
+<ul>
+<li>系统空间信息</li>
+<li>数据库中对象信息</li>
+<li>性能以及统计信息</li>
+<li>Oracle用户信息</li>
+<li>用户访问、操作信息</li>
+<li>用户角色等权限信息</li>
+<li>列的相关信息   </li>
+</ul>
+<h3 id="数据文件"><a href="#数据文件" class="headerlink" title="数据文件"></a>数据文件</h3><p>数据文件包括了全部数据库数据。</p>
+<ul>
+<li>一个数据库可以有多个数据文件</li>
+<li>一个数据文件只对应一个数据库</li>
+<li>可以对数据文件进行设置</li>
+<li>一个表空间可以由一个或多个数据文件组成   </li>
+</ul>
+<h3 id="控制文件"><a href="#控制文件" class="headerlink" title="控制文件"></a>控制文件</h3><p>控制文件是一个很小的二进制文件，它维护着数据库的全局物理结构，用以支持数据库的启动和运行。创建数据库时同时就创建了与之对应的控制文件，在数据库使用过程中，Oracle不断的更新控制文件，so，只要数据库是打开的，控制文件就处于可写状态。<br>控制文件记录了数据库的物理结构，包括以下信息：<br>数据库名称,数据库数据文件、日志文件的名称与存放位置,数据库建立时间,日志历史,归档日志信息,表空间信息,数据文件脱机范围,数据文件拷贝信息,备份组和备份块信息   ,备份数据文件和重做日志信息,当前日志序列数,检查点信息      </p>
+<h3 id="日志文件"><a href="#日志文件" class="headerlink" title="日志文件"></a>日志文件</h3><p>日志文件也叫做重做日志文件，用于记录对数据库的所有操作信息。日志文件是保证数据库安全和数据库备份与恢复的文件。在一个Oracle数据库中，至少有两个日志文件组，每组有一个或多个日志成员。</p>
+<h3 id="表空间"><a href="#表空间" class="headerlink" title="表空间"></a>表空间</h3><p>ORACLE数据库能够有一个或多个表空间,而一个表空间则对应着一个或多个物理的数据库文件。表空间是ORACLE数据库恢复的最小单位,容纳着许多数据库实体,如表、视图、索引、聚簇、回退段和临时段等。</p>
+<h3 id="段"><a href="#段" class="headerlink" title="段"></a>段</h3><p> 由一个或多个区构成，被分配到一个特定的数据结构中，段只能存储于一个表空间中，不能跨越表空间存储.当构成一个段的所有区空间满了后，系统需要分配其他的区给该段以便存储数据，这些新增的区可能是临近的也可能不是临近的。<br><img src="/2017/03/Oracle-笔记/oracle/duan.png" alt="oracle block"></p>
+<h3 id="区"><a href="#区" class="headerlink" title="区"></a>区</h3><p>一组数据块构成一个区,区是Oracle存储分配的最小单位，由一个或多个块组成。</p>
+<h3 id="数据块"><a href="#数据块" class="headerlink" title="数据块"></a>数据块</h3><p><img src="/2017/03/Oracle-笔记/oracle/oracleblock.png" alt="oracle block"></p>
+<h3 id="账户类型"><a href="#账户类型" class="headerlink" title="账户类型"></a>账户类型</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">用户:默认密码</th>
+<th style="text-align:center">登录身份</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">sys:change_on_install</td>
+<td style="text-align:center">SYSDBA或SYSOPER</td>
+<td style="text-align:center">不能以NORMAL登陆，默认管理员</td>
+</tr>
+<tr>
+<td style="text-align:center">syste:mmanager</td>
+<td style="text-align:center">SYSDBA或NORMAL</td>
+<td style="text-align:center">不能以SYSOPER登陆，默认管理员</td>
+</tr>
+<tr>
+<td style="text-align:center">scott:tiger</td>
+<td style="text-align:center">NORMAL</td>
+<td style="text-align:center">普通用户</td>
+</tr>
+</tbody>
+</table>
+<h3 id="键约束"><a href="#键约束" class="headerlink" title="键约束"></a>键约束</h3><p>1.主键约束： 一个表只能有一个主键约束。主键可以是单个字段，也可以是多个字段。无论是哪种情况，其所有字段都是NOT NULL。<br>2.Unique约束：一个表可以有多个Unique约束，Unique的字段可以为NULL。<br>3.主键与Unique：不同点在于一个表只能有一个主键约束，但是可以有多个Unique约束；主键所有字段都是not null,unique可以是null。相同点在于都能保证唯一性。<br>4.主键、Unique与索引：主键约束与Unique约束默认会成为索引。当主键和Unique有多个字段时，有索引前缀性问题，即where语句中的条件必须有主键或者unique的第一个字段，否则不会使用索引。<br>5.外键与主键、Unique：外键必须为另外一张表(父表)的主键或者唯一索引。如果要添加记录，而父表中没有则报错。反之，如果要删除父表中的记录，而子表中有记录，也会报错。但是如果在创建外键约束时，如果使用on delete cascade，则删除父表中数据时，不报错而直接把子表关联的数据删除。如果要删除父表，则需要加上cascade constraints，此时子表的foreign key被去除，表中记录保持不变。</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">CHAR(length)</td>
+<td style="text-align:center">存储固定长度的字符串。参数 length 指定了长度，如果存储的字符串长度小于 length，用空格填充。默认长度是 1，最长不超过 2000 字节。</td>
+</tr>
+<tr>
+<td style="text-align:center">VARCHAR2</td>
+<td style="text-align:center">存储可变长度的字符串。length 指定了该字符串的最大长度。默认长度是 1，最长不超过 4000 字符</td>
+</tr>
+<tr>
+<td style="text-align:center">NUMBER(p,s)</td>
+<td style="text-align:center">既可以存储浮点数,也可以存储整数,p表示数字的最大位数(如果是小数包括整数部分和小数部分以及小数点,p默认是38位),s是指小数位数</td>
+</tr>
+<tr>
+<td style="text-align:center">DECIMAL(p,s)</td>
+<td style="text-align:center">数字类型,p为整数位,s为小数位</td>
+</tr>
+<tr>
+<td style="text-align:center">INTEGER</td>
+<td style="text-align:center">整数类型,较小的整数</td>
+</tr>
+<tr>
+<td style="text-align:center">FLOAT</td>
+<td style="text-align:center">浮点数类型,number(38),双精度</td>
+</tr>
+<tr>
+<td style="text-align:center">DATA</td>
+<td style="text-align:center">存储日期和时间,存储纪元,4位年,月,日,时,分,秒,存储时间从公元前4712.01.01到公元后4712.12.31</td>
+</tr>
+<tr>
+<td style="text-align:center">TIMESTAMP</td>
+<td style="text-align:center">时间戳 不但存储日期的年月日时分秒,以及秒后6位,同时包含时区</td>
+</tr>
+<tr>
+<td style="text-align:center">CLOB</td>
+<td style="text-align:center">存储大的文本,比如存储非结构化的XML文档</td>
+</tr>
+<tr>
+<td style="text-align:center">BLOB</td>
+<td style="text-align:center">存储二进制对象,如图形,视频,声音等</td>
+</tr>
+<tr>
+<td style="text-align:center">BFILE</td>
+<td style="text-align:center">存放在数据库外的二进制数据,最大长度4G</td>
+</tr>
+<tr>
+<td style="text-align:center">ROWID</td>
+<td style="text-align:center">数据表记录的唯一行号,最大长度10bytes</td>
+</tr>
+<tr>
+<td style="text-align:center">NROWID</td>
+<td style="text-align:center">二进制数据表的唯一记录行号,最大长度4000bytes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="数据类型示例"><a href="#数据类型示例" class="headerlink" title="数据类型示例"></a>数据类型示例</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">格式</th>
+<th style="text-align:center">输入数字</th>
+<th style="text-align:center">实际的存储</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">NUMBER</td>
+<td style="text-align:center">1234.567</td>
+<td style="text-align:center">1234.567</td>
+</tr>
+<tr>
+<td style="text-align:center">NUMBER(6,2)</td>
+<td style="text-align:center">123.4567</td>
+<td style="text-align:center">123.45</td>
+</tr>
+<tr>
+<td style="text-align:center">NUMBER(4,2)</td>
+<td style="text-align:center">12345.67</td>
+<td style="text-align:center">error 输入的数字超过了所指的精度,数据库不能存储</td>
+</tr>
+</tbody>
+</table>
+<h1 id="SQL语言"><a href="#SQL语言" class="headerlink" title="SQL语言"></a>SQL语言</h1><p> SQL （Structured Query Language ）语言是一种在关系数据库中定义和操作数据的标准语言，是用户与数据库之间进行交流的窗口。<br> 具有 <strong>综合统一,高度非过程化,面向集合的操作方式,同一种语法结构提供两种使用方式,语言简单、易学易用</strong> 等特点</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">分类</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">数据库定义语言DDL</td>
+<td style="text-align:center">create,drop,alter</td>
+</tr>
+</tbody>
+</table>
+<h1 id="命令行查询数据库参数"><a href="#命令行查询数据库参数" class="headerlink" title="命令行查询数据库参数"></a>命令行查询数据库参数</h1><p><strong>说明: 为方便阅读,本文将SQL的<code style="color:red">关键字</code> (语法高亮部分)全用大写字母 ,<code style="color:red">表名</code>和<code style="color:red">表字段</code>用小写字母</strong><br><strong style="color:red">??求教??:</strong> 用了几天oracle 的管理工具,sql developer PL/SQL 查询的时候都是显示的大写的字段名,而且添加数据使用大写的字段名都是可以的啊.如果没记错的话,oracle是区分大小写的.这就无法理解了,难道Oracle做了处理?有清楚的留个言交流下</p>
+<h2 id="查看数据库信息"><a href="#查看数据库信息" class="headerlink" title="查看数据库信息"></a>查看数据库信息</h2><h3 id="查看数据库名"><a href="#查看数据库名" class="headerlink" title="查看数据库名"></a>查看数据库名</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> v$<span class="keyword">database</span>;(注意权限)</div><div class="line"><span class="keyword">show</span> parameter db;</div><div class="line">   <span class="comment">---------输出如下:---------</span></div><div class="line">NAME</div><div class="line">   <span class="comment">---------</span></div><div class="line">   XSP</div></pre></td></tr></table></figure>
+<h3 id="查询当前数据库实例名"><a href="#查询当前数据库实例名" class="headerlink" title="查询当前数据库实例名"></a>查询当前数据库实例名</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> instance_name <span class="keyword">from</span> v$<span class="keyword">instance</span>;</div><div class="line"><span class="keyword">show</span> parameter <span class="keyword">instance</span>;</div><div class="line">    <span class="comment">---------输出如下:------</span></div><div class="line">    NAME                                 TYPE        VALUE</div><div class="line">	<span class="comment">------------------------------------ ----------- ------------------------------</span></div><div class="line">	active_instance_count                integer</div><div class="line">	cluster_database_instances           integer     1</div><div class="line">	instance_groups                      string                        </div><div class="line">	instance_name                        string      xsp</div><div class="line">	instance_number                      integer     0</div><div class="line">	instance_type                        string      RDBMS</div><div class="line">	open_links_per_instance              integer     4</div><div class="line">	parallel_instance_group              string</div><div class="line">	parallel_server_instances            integer     1</div></pre></td></tr></table></figure>
+<h2 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h2><h3 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h3><p><strong>语法结构:</strong> CREATE TABLE 表名(字段名1 数据类型 约束,字段名2 数据类型 约束,)<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> infos <span class="comment">--infos 为学生表,默认建立在system数据库下</span></div><div class="line">(</div><div class="line">stuid VARCHAR2(<span class="number">7</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--学号 格式: 'S'+班级号+2位序号</span></div><div class="line">stuname VARCHAR2(<span class="number">10</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--姓名</span></div><div class="line">gender VARCHAR2(<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--性别</span></div><div class="line">age <span class="built_in">NUMBER</span>(<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--年龄</span></div><div class="line">seat <span class="built_in">number</span> <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--座位号</span></div><div class="line">enrolldate <span class="built_in">date</span>, <span class="comment">--入学时间</span></div><div class="line">stuaddress VARCHAR2(<span class="number">50</span>) <span class="keyword">default</span> <span class="string">'地址不详'</span> <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--地址</span></div><div class="line">classno VARCHAR2(<span class="number">4</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="comment">--班号 学期序号+班级号 </span></div><div class="line">)<span class="comment">--建表语句 CREATE TABLE 表名 结束</span></div><div class="line">/</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> infos <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> PK_INFOS PRIMARY <span class="keyword">KEY</span>(stuid);</div></pre></td></tr></table></figure></p>
+<p>说明:<br>1.在代码行中使用 ‘–’可以添加注释<br>2.在 Oracle 代码中，“/”执行缓存区中的语句，由于缓冲区中只存储一条刚刚保存过的语句，由于每条语句没有用分号结尾，只是保存在缓冲区，因此每条语句后面都有单独一行“/”。<br>3.ALTER TABLE 表名 用来修改表属性 之后详解</p>
+<h3 id="数据插入操作"><a href="#数据插入操作" class="headerlink" title="数据插入操作"></a>数据插入操作</h3><p><strong>语法结构:</strong> INSTER INTO 表名(列名1,列名2…) VALUES (值1,值2)<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> infos </div><div class="line"><span class="keyword">VALUES</span></div><div class="line">(<span class="string">'s100102'</span>,<span class="string">'Adele'</span>,<span class="string">'女'</span>,<span class="number">20</span>,<span class="number">21</span>,<span class="keyword">TO_DATE</span>(<span class="string">'2017-3-22 11:23:10'</span>,<span class="string">'YYYY-MM-DD HH24:MI:SS'</span>),<span class="keyword">DEFAULT</span>,<span class="string">'1001'</span>);</div></pre></td></tr></table></figure></p>
+<p>说明:<br>1.列名(字段)可以省略,缺省时表示所有列名,值顺序按定义时的顺序书写<br>2.值得数量和顺序需与表后列名顺序一致,值得数据类型要与定义时一致<br>3.如果有默认列,这使用<code style="color:red">DEFAULT</code>卡位<br>4.多条数据插入有点蛋疼,不想MySQL那样用逗号分隔就可以了.贴个链接:<a href="http://www.cnblogs.com/mq0036/p/6370224.html" title="同时插入多条数据方法" target="_blank" rel="external">Oracle INSERT</a><br>5.Oracle INSET 可以将一个查询结果集 插入一个表,要求结果集和插入表结构一致上面链接给的方法大致思路就是这个~(≧▽≦)~啦啦啦.<code>NSERT INTO INFOS2 SELECT * FROM INFOS;</code></p>
+<h3 id="数据更新操作"><a href="#数据更新操作" class="headerlink" title="数据更新操作"></a>数据更新操作</h3><p><strong>语法结构:</strong> UPDATE 表名 SET 列名1 = 值,列名2 = 值… WHERE 条件<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">UPDATE infos SET classno = '1002',stuaddress = '美利坚'</div><div class="line">WHERE stuname = 'Adele';</div><div class="line">说明:</div><div class="line">1.必须添加WHERE条件限制,避免where 1 的情况发生,会修改全表的数据,那时你就哭去吧!</div><div class="line">### 数据更新操作</div><div class="line">#### DELETE</div><div class="line">**语法结构:** DELETE FROM 表名  WHERE 条件</div><div class="line">#### TRUNCATE</div><div class="line">**语法结构:** TRUNCATE TABLE 表名</div><div class="line">``` sql</div><div class="line">DELETE FROM infos WHERE stuname = 'Adele';--删除一条(多条看条件)语句</div><div class="line">DELETE FROM infos;--表数据全部删除,相当于WHERE 1;</div><div class="line">TRUNCATE FROM infos;</div></pre></td></tr></table></figure></p>
+<p>说明:<br>1.TRUNCATE 和 DELETE 都能把表中的数据全部删除，他们的区别是<br> 1.TRUNCATE 是 DDL 命令，删除的数据不能恢复；<br> 2.DELETE 命令是 DML 命令，删除后的数据可以通过日志文件恢复。<br>2.如果一个表中数据记录很多，TRUNCATE 相对 DELETE 速度快。<br>3.由于 TRUNCATE 命令比较<strong style="color:red;">危险</strong>，因此在实际开发中，<strong>TRUNCATE 命令慎用,到时哭去吧</strong>。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        ﻿<div align="center">
+ 
+   <div class="">
+   <p><span>
+    <b>本文地址:</b><a href="/2017/03/Oracle-笔记/" title="Oracle 笔记">http://dreamxs.github.io/2017/03/Oracle-笔记/</a><br/><b>转载请注明出处,谢谢分享!</b>
+    </span></p>
+   </div>
+ 
+</div>
+    
+
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>粮草短缺，多谢支持！oTZ.</div>
+    <button id="rewardButton" disable="enable" onclick=" var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';this.innerHTML='不赏';} else {qr.style.display='none';this.innerHTML='赏!';}">
+     不赏
+    </button>
+    <div id="QR" style="display: block;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://omg6y9je2.bkt.clouddn.com/weixin.png" alt="Dreamxs WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://omg6y9je2.bkt.clouddn.com/zhifubao.png" alt="Dreamxs Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
+          
+            <a href="/tags/Oracle/" rel="tag"># Oracle</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+            
+  <div class="ds-thread" data-thread-key="2017/03/Oracle-笔记/"
+          data-title="Oracle 笔记" data-url="http://dreamxs.github.io/2017/03/Oracle-笔记/">
+  </div>
+  
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Dreamxs" />
+          <p class="site-author-name" itemprop="name">Dreamxs</p>
+           
+              <p class="site-description motion-element" itemprop="description">码渣    丨     搬运工     丨    次元控      丨    美剧爱好者</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/dreamxs" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        <div class="fluid-vids" style="position: relative; margin-bottom: 20px; width: 100%;">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86 src="//music.163.com/outchain/player?type=2&id=22677443&auto=0&height=66"></iframe>
+</div>
+        
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Oracle-简介"><span class="nav-number">1.</span> <span class="nav-text">Oracle 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-基本术语"><span class="nav-number">1.1.</span> <span class="nav-text">Oracle 基本术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据字典"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据文件"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制文件"><span class="nav-number">1.1.3.</span> <span class="nav-text">控制文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志文件"><span class="nav-number">1.1.4.</span> <span class="nav-text">日志文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表空间"><span class="nav-number">1.1.5.</span> <span class="nav-text">表空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#段"><span class="nav-number">1.1.6.</span> <span class="nav-text">段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区"><span class="nav-number">1.1.7.</span> <span class="nav-text">区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据块"><span class="nav-number">1.1.8.</span> <span class="nav-text">数据块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#账户类型"><span class="nav-number">1.1.9.</span> <span class="nav-text">账户类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键约束"><span class="nav-number">1.1.10.</span> <span class="nav-text">键约束</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型示例"><span class="nav-number">1.2.1.</span> <span class="nav-text">数据类型示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL语言"><span class="nav-number">2.</span> <span class="nav-text">SQL语言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令行查询数据库参数"><span class="nav-number">3.</span> <span class="nav-text">命令行查询数据库参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看数据库信息"><span class="nav-number">3.1.</span> <span class="nav-text">查看数据库信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看数据库名"><span class="nav-number">3.1.1.</span> <span class="nav-text">查看数据库名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询当前数据库实例名"><span class="nav-number">3.1.2.</span> <span class="nav-text">查询当前数据库实例名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表操作"><span class="nav-number">3.2.</span> <span class="nav-text">表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据表"><span class="nav-number">3.2.1.</span> <span class="nav-text">创建数据表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据插入操作"><span class="nav-number">3.2.2.</span> <span class="nav-text">数据插入操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据更新操作"><span class="nav-number">3.2.3.</span> <span class="nav-text">数据更新操作</span></a></li></ol></li></ol></li></ol></div>
+                       
+          </div>
+          
+          
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dreamxs</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="https://github.com/hustcc/canvas-nest.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"dreamxs"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+<script type="text/javascript" color="101,153,255" opacity='1' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+</body>
+</html>

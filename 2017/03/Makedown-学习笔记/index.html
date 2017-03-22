@@ -93,16 +93,15 @@
 <meta property="og:url" content="http://dreamxs.github.io/2017/03/Makedown-学习笔记/index.html">
 <meta property="og:site_name" content="Dreamxs">
 <meta property="og:description" content="Makedown学习笔记，供自己练习使用最近刚刚接触HEXO搭建了个人博客。作为一个目前为止还是个伪码农的小菜鸟，世界那么大，好多东西都要学。那么久先从简单点的makedown入手，开始一步一步的coding之路。相互学习，共同进步。">
-<meta property="og:image" content="http://dreamxs.github.io/../../../image/next-organ.png">
-<meta property="og:image" content="http://dreamxs.github.io/../../../image/next-organ.png">
-<meta property="og:image" content="http://dreamxs.github.io/./makedown/next-organ.png">
+<meta property="og:image" content="http://dreamxs.github.io/2017/03/Makedown-学习笔记/makedown/next-organ.png">
+<meta property="og:image" content="http://dreamxs.github.io/2017/03/Makedown-学习笔记/makedown/next-organ.png">
 <meta property="og:image" content="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2094204188,1344679959&fm=80&w=179&h=119&img.JPEG">
 <meta property="og:image" content="http://www.w3school.com.cn/i/eg_tulip.jpg">
-<meta property="og:updated_time" content="2017-03-21T01:38:16.409Z">
+<meta property="og:updated_time" content="2017-03-21T03:13:05.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Makedown 学习笔记">
 <meta name="twitter:description" content="Makedown学习笔记，供自己练习使用最近刚刚接触HEXO搭建了个人博客。作为一个目前为止还是个伪码农的小菜鸟，世界那么大，好多东西都要学。那么久先从简单点的makedown入手，开始一步一步的coding之路。相互学习，共同进步。">
-<meta name="twitter:image" content="http://dreamxs.github.io/../../../image/next-organ.png">
+<meta name="twitter:image" content="http://dreamxs.github.io/2017/03/Makedown-学习笔记/makedown/next-organ.png">
 
 
 
@@ -384,7 +383,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">1,789(字)</span>
+           <span class="post-count">1,840(字)</span>
            
          </span>
 	  
@@ -416,7 +415,7 @@
       
 
       
-        <h1 id="Makedown学习笔记，供自己练习使用"><a href="#Makedown学习笔记，供自己练习使用" class="headerlink" title="Makedown学习笔记，供自己练习使用"></a>Makedown学习笔记，供自己练习使用</h1><p>最近刚刚接触HEXO搭建了个人博客。<br>作为一个目前为止还是个伪码农的小菜鸟，世界那么大，好多东西都要学。<br><br>那么久先从简单点的makedown入手，开始一步一步的coding之路。<br>相互学习，共同进步。<br><img src="../../../image/next-organ.png" alt="相对路径图片" title="next图片"><br><a id="more"></a></p>
+        <h1 id="Makedown学习笔记，供自己练习使用"><a href="#Makedown学习笔记，供自己练习使用" class="headerlink" title="Makedown学习笔记，供自己练习使用"></a>Makedown学习笔记，供自己练习使用</h1><p>最近刚刚接触HEXO搭建了个人博客。<br>作为一个目前为止还是个伪码农的小菜鸟，世界那么大，好多东西都要学。<br><br>那么久先从简单点的makedown入手，开始一步一步的coding之路。<br>相互学习，共同进步。<br><img src="/2017/03/Makedown-学习笔记/makedown/next-organ.png" alt="相对路径图片" title="next图片"><br><a id="more"></a></p>
 <h2 id="段落和换行"><a href="#段落和换行" class="headerlink" title="段落和换行"></a>段落和换行</h2><p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。    </p>
 <p>比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进,文本需要贴边。   </p>
 <p>「由一个或多个连续的文本行组成」这句话其实暗示了 Markdown 允许段落内的强迫换行（括号后插入了换行符<code>&lt;br /&gt;</code>），<br>这个特性和其他大部分的 text-to-HTML 格式不一样（包括 Movable Type 的「Convert Line Breaks」选项），其它的格式会把每个换行符都转成标签。</p>
@@ -545,12 +544,28 @@ __double underscores__   解析成&lt;strong&gt;double underscores&lt;strong&gt;
 参考式:
 ![Alt text][id]
 [id]: url/to/image  &quot;Optional title attribute&quot;
-支持自定义宽高，需使用html的`&lt;img&gt;`                                                                                               
- ![相对路径图片](../../../image/next-organ.png &quot;next图片&quot;)   source目录下的image图片
- ![相对路径图片](./makedown/next-organ.png)       _post/Makedown-学习笔记（当前文章地址）/makedown 图片                 
+支持自定义宽高，需使用html的`&lt;img&gt;` 
+注意一下相对路是本地图片,需要安装hexo-asset-image
+npm install https://github.com/CodeFalling/hexo-asset-image --save
+
+假设_posts内目录结构
+makedown笔记
+    makedown
+    ├── apppicker.jpg
+    ├── logo.jpg
+    └── rules.jpg    
+MacGesture2-Publish.md
+则makedown标签如下
+![相对路径图片](Makedown-学习笔记/makedown/next-organ.png)
+在 hexo g后会自动生成
+public/2015/10/18/makedown笔记/makedown
+                            ├── apppicker.jpg
+                            ├── index.html
+                            ├── logo.jpg
+                            └── rules.jpg     
  ![网络地址图片](https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2094204188,1344679959&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG  &quot;百度链接&quot;)     
  &lt;img src=&quot;http://www.w3school.com.cn/i/eg_tulip.jpg&quot;  alt=&quot;img标签&quot; title=&quot;imgtitle&quot; width=400 height=300/&gt;                                                                                      
-</code></pre><p><img src="../../../image/next-organ.png" alt="相对路径图片" title="next图片"><br><img src="./makedown/next-organ.png" alt="相对路径图片" title="next图片"><br><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2094204188,1344679959&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG" alt="网络地址图片" title="百度链接"><br><img src="http://www.w3school.com.cn/i/eg_tulip.jpg" alt="img标签" title="imgtitle" width="400" height="300/"></p>
+</code></pre><p><img src="/2017/03/Makedown-学习笔记/makedown/next-organ.png" alt="相对路径图片"><br><img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2094204188,1344679959&amp;fm=80&amp;w=179&amp;h=119&amp;img.JPEG" alt="网络地址图片" title="百度链接"><br><img src="http://www.w3school.com.cn/i/eg_tulip.jpg" alt="img标签" title="imgtitle" width="400" height="300/"></p>
 
       
     </div>
