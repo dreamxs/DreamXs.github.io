@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://dreamxs.github.io/2017/03/Oracle-笔记/oracle/oracle_database_11g.gif">
 <meta property="og:image" content="http://dreamxs.github.io/2017/03/Oracle-笔记/oracle/duan.png">
 <meta property="og:image" content="http://dreamxs.github.io/2017/03/Oracle-笔记/oracle/oracleblock.png">
-<meta property="og:updated_time" content="2017-03-22T14:46:47.897Z">
+<meta property="og:updated_time" content="2017-03-23T09:53:34.309Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle 笔记">
 <meta name="twitter:description" content="Oracle 简介Oracle Database，又名Oracle RDBMS，或简称Oracle。是甲骨文公司的一款关系数据库管理系统。它是在数据库领域一直处于领先地位的产品。可以说Oracle数据库系统是目前世界上流行的关系数据库管理系统，系统可移植性好、使用方便、功能强，适用于各类大、中、小、微机环境。它是一种高效率、可靠性好的 适应高吞吐量的数据库解决方案。">
@@ -382,7 +382,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">2,712(字)</span>
+           <span class="post-count">2,828(字)</span>
            
          </span>
 	  
@@ -392,7 +392,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">阅读时长:</span>
-           <span class="post-count">10(分)</span>
+           <span class="post-count">11(分)</span>
            
          </span>
 <!-- 以上部分为：字数统计、阅读时长插入代码  -->
@@ -580,7 +580,8 @@
 <p>说明:<br>1.必须添加WHERE条件限制,避免where 1 的情况发生,会修改全表的数据,那时你就哭去吧!</p>
 <h3 id="数据删除操作"><a href="#数据删除操作" class="headerlink" title="数据删除操作"></a>数据删除操作</h3><h4 id="DELETE-nbsp-nbsp-nbsp-nbsp-语法结构-DELETE-FROM-表名-WHERE-条件"><a href="#DELETE-nbsp-nbsp-nbsp-nbsp-语法结构-DELETE-FROM-表名-WHERE-条件" class="headerlink" title="DELETE  &nbsp;&nbsp;&nbsp;&nbsp;   语法结构: DELETE FROM 表名  WHERE 条件"></a>DELETE  &nbsp;&nbsp;&nbsp;&nbsp;   <strong>语法结构:</strong> DELETE FROM 表名  WHERE 条件</h4><h4 id="TRUNCATE-nbsp-nbsp-语法结构-TRUNCATE-TABLE-表名"><a href="#TRUNCATE-nbsp-nbsp-语法结构-TRUNCATE-TABLE-表名" class="headerlink" title="TRUNCATE &nbsp;&nbsp; 语法结构: TRUNCATE TABLE 表名"></a>TRUNCATE &nbsp;&nbsp; <strong>语法结构:</strong> TRUNCATE TABLE 表名</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> infos <span class="keyword">WHERE</span> stuname = <span class="string">'Adele'</span>;<span class="comment">--删除一条(多条看条件)语句</span></div><div class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> infos;<span class="comment">--表数据全部删除,相当于WHERE 1;</span></div><div class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">FROM</span> infos;</div></pre></td></tr></table></figure>
 <p>说明:<br>1.TRUNCATE 和 DELETE 都能把表中的数据全部删除，他们的区别是<br>&nbsp;&nbsp;&nbsp;a.TRUNCATE 是 DDL 命令，删除的数据不能恢复；<br>&nbsp;&nbsp;&nbsp;b.DELETE 命令是 DML 命令，删除后的数据可以通过日志文件恢复。<br>2.如果一个表中数据记录很多，TRUNCATE 相对 DELETE 速度快。<br>3.两种操作只删除表内数据,都会保留表结构,即成为空表.需区别于 <code>drop table</code> 语句<br>4.由于 TRUNCATE 命令比较<strong style="color:red;">危险</strong>，因此在实际开发中，<strong>TRUNCATE 命令慎用,到时哭去吧</strong>。</p>
-<h3 id="修改表操作"><a href="#修改表操作" class="headerlink" title="修改表操作"></a>修改表操作</h3><h4 id="修改表名"><a href="#修改表名" class="headerlink" title="修改表名"></a>修改表名</h4><h4 id="添加字段"><a href="#添加字段" class="headerlink" title="添加字段"></a>添加字段</h4><h4 id="删除字段"><a href="#删除字段" class="headerlink" title="删除字段"></a>删除字段</h4><h4 id="修改字段属性"><a href="#修改字段属性" class="headerlink" title="修改字段属性"></a>修改字段属性</h4><h4 id="修改约束"><a href="#修改约束" class="headerlink" title="修改约束"></a>修改约束</h4><h2 id="表数据查询语句-SELECT"><a href="#表数据查询语句-SELECT" class="headerlink" title="表数据查询语句 SELECT"></a>表数据查询语句 <em style="color:red;">SELECT</em></h2>
+<h3 id="修改表操作"><a href="#修改表操作" class="headerlink" title="修改表操作"></a>修改表操作</h3><h4 id="修改表名"><a href="#修改表名" class="headerlink" title="修改表名"></a>修改表名</h4><h4 id="添加字段"><a href="#添加字段" class="headerlink" title="添加字段"></a>添加字段</h4><h4 id="删除字段"><a href="#删除字段" class="headerlink" title="删除字段"></a>删除字段</h4><h4 id="修改字段属性"><a href="#修改字段属性" class="headerlink" title="修改字段属性"></a>修改字段属性</h4><h4 id="修改约束"><a href="#修改约束" class="headerlink" title="修改约束"></a>修改约束</h4><h2 id="表数据查询语句-SELECT"><a href="#表数据查询语句-SELECT" class="headerlink" title="表数据查询语句 SELECT"></a>表数据查询语句 <em style="color:red;">SELECT</em></h2><p>Oracle 安装过后,默认会有一个SCOTT数据库旗下表结构和数据如下<br>序号  列名  类型  说明<br>1  EMPNO     NUMBER(4)  员工编号，EMP 表主键<br>2  ENAME     VARCHAR2(10)  员工姓名<br>3  JOB       VARCHAR2(9)  员工工作<br>4  MGR       NUMBER(4)  员工的领导编号，引用 EMPNO<br>5  HIREDATE  DATE  入职日期<br>6  SAL  NUMBER(7,2)  员工工资<br>7  COMM  NUMBER(7,2)  员工奖金<br>8  DEPTNO  NUMBER(2)  员工部门编号，是表 DEPT 的外键。</p>
+
       
     </div>
 
