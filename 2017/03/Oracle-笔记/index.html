@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://dreamxs.github.io/2017/03/Oracle-笔记/oracle/oracle_database_11g.gif">
 <meta property="og:image" content="http://dreamxs.github.io/2017/03/Oracle-笔记/oracle/duan.png">
 <meta property="og:image" content="http://dreamxs.github.io/2017/03/Oracle-笔记/oracle/oracleblock.png">
-<meta property="og:updated_time" content="2017-03-23T09:53:34.309Z">
+<meta property="og:updated_time" content="2017-03-23T15:25:06.307Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle 笔记">
 <meta name="twitter:description" content="Oracle 简介Oracle Database，又名Oracle RDBMS，或简称Oracle。是甲骨文公司的一款关系数据库管理系统。它是在数据库领域一直处于领先地位的产品。可以说Oracle数据库系统是目前世界上流行的关系数据库管理系统，系统可移植性好、使用方便、功能强，适用于各类大、中、小、微机环境。它是一种高效率、可靠性好的 适应高吞吐量的数据库解决方案。">
@@ -382,7 +382,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">2,828(字)</span>
+           <span class="post-count">3,343(字)</span>
            
          </span>
 	  
@@ -392,7 +392,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">阅读时长:</span>
-           <span class="post-count">11(分)</span>
+           <span class="post-count">13(分)</span>
            
          </span>
 <!-- 以上部分为：字数统计、阅读时长插入代码  -->
@@ -559,7 +559,7 @@
 <thead>
 <tr>
 <th style="text-align:center">分类</th>
-<th style="text-align:center">说明</th>
+<th style="text-align:center">关键字</th>
 </tr>
 </thead>
 <tbody>
@@ -567,20 +567,146 @@
 <td style="text-align:center">数据库定义语言DDL</td>
 <td style="text-align:center">create,drop,alter</td>
 </tr>
+<tr>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+</tr>
 </tbody>
 </table>
 <h1 id="命令行查询数据库参数"><a href="#命令行查询数据库参数" class="headerlink" title="命令行查询数据库参数"></a>命令行查询数据库参数</h1><p><strong>说明: 为方便阅读,本文将SQL的<code style="color:red">关键字</code> (语法高亮部分)全用大写字母 ,<code style="color:red">表名</code>和<code style="color:red">表字段</code>用小写字母</strong><br><strong style="color:red">??求教??:</strong> 用了几天oracle 的管理工具,sql developer PL/SQL 查询的时候都是显示的大写的字段名,而且添加数据使用大写的字段名都是可以的啊.如果没记错的话,oracle是区分大小写的.这就无法理解了,难道Oracle做了处理?有清楚的留个言交流下</p>
-<h2 id="查看数据库信息"><a href="#查看数据库信息" class="headerlink" title="查看数据库信息"></a>查看数据库信息</h2><h3 id="查看数据库名"><a href="#查看数据库名" class="headerlink" title="查看数据库名"></a>查看数据库名</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> v$<span class="keyword">database</span>;(注意权限)</div><div class="line"><span class="keyword">show</span> parameter db;</div><div class="line">   <span class="comment">---------输出如下:---------</span></div><div class="line">NAME</div><div class="line">   <span class="comment">---------</span></div><div class="line">   XSP</div></pre></td></tr></table></figure>
+<h2 id="查看数据库信息"><a href="#查看数据库信息" class="headerlink" title="查看数据库信息"></a>查看数据库信息</h2><h3 id="查看数据库名"><a href="#查看数据库名" class="headerlink" title="查看数据库名"></a>查看数据库名</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> v$<span class="keyword">database</span>;(注意权限)</div><div class="line"><span class="keyword">show</span> parameter db;</div><div class="line"><span class="comment">---------输出如下:---------</span></div><div class="line">NAME</div><div class="line"><span class="comment">---------</span></div><div class="line">XSP</div></pre></td></tr></table></figure>
 <h3 id="查询当前数据库实例名"><a href="#查询当前数据库实例名" class="headerlink" title="查询当前数据库实例名"></a>查询当前数据库实例名</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> instance_name <span class="keyword">from</span> v$<span class="keyword">instance</span>;</div><div class="line"><span class="keyword">show</span> parameter <span class="keyword">instance</span>;</div><div class="line">    <span class="comment">---------输出如下:------</span></div><div class="line">    NAME                                 TYPE        VALUE</div><div class="line">	<span class="comment">------------------------------------ ----------- ------------------------------</span></div><div class="line">	active_instance_count                integer</div><div class="line">	cluster_database_instances           integer     1</div><div class="line">	instance_groups                      string                        </div><div class="line">	instance_name                        string      xsp</div><div class="line">	instance_number                      integer     0</div><div class="line">	instance_type                        string      RDBMS</div><div class="line">	open_links_per_instance              integer     4</div><div class="line">	parallel_instance_group              string</div><div class="line">	parallel_server_instances            integer     1</div></pre></td></tr></table></figure>
 <h2 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h2><h3 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h3><p><strong>语法结构:</strong> CREATE TABLE 表名(字段名1 数据类型 约束,字段名2 数据类型 约束,)<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> infos <span class="comment">--infos 为学生表,默认建立在system数据库下</span></div><div class="line">(</div><div class="line">stuid VARCHAR2(<span class="number">7</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--学号 格式: 'S'+班级号+2位序号</span></div><div class="line">stuname VARCHAR2(<span class="number">10</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--姓名</span></div><div class="line">gender VARCHAR2(<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--性别</span></div><div class="line">age <span class="built_in">NUMBER</span>(<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--年龄</span></div><div class="line">seat <span class="built_in">number</span> <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--座位号</span></div><div class="line">enrolldate <span class="built_in">date</span>, <span class="comment">--入学时间</span></div><div class="line">stuaddress VARCHAR2(<span class="number">50</span>) <span class="keyword">default</span> <span class="string">'地址不详'</span> <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--地址</span></div><div class="line">classno VARCHAR2(<span class="number">4</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="comment">--班号 学期序号+班级号 </span></div><div class="line">)<span class="comment">--建表语句 CREATE TABLE 表名 结束</span></div><div class="line">/</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> infos <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> PK_INFOS PRIMARY <span class="keyword">KEY</span>(stuid);</div></pre></td></tr></table></figure></p>
-<p>说明:<br>1.在代码行中使用 ‘–’可以添加注释<br>2.在 Oracle 代码中，“/”执行缓存区中的语句，由于缓冲区中只存储一条刚刚保存过的语句，由于每条语句没有用分号结尾，只是保存在缓冲区，因此每条语句后面都有单独一行“/”。<br>3.ALTER TABLE 表名 用来修改表属性 之后详解</p>
+<p>说明:<br>1.在代码行中使用 ‘–’可以添加单行注释 ‘/**/‘添加多行注释<br>2.在 Oracle 代码中，“/”执行缓存区中的语句，由于缓冲区中只存储一条刚刚保存过的语句，由于每条语句没有用分号结尾，只是保存在缓冲区，因此每条语句后面都有单独一行“/”。<br>3.<code>ALTER TABLE 表名</code>, 用来修改表属性 之后详解</p>
 <h3 id="数据插入操作"><a href="#数据插入操作" class="headerlink" title="数据插入操作"></a>数据插入操作</h3><p><strong>语法结构:</strong> INSTER INTO 表名(列名1,列名2…) VALUES (值1,值2)<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> infos </div><div class="line"><span class="keyword">VALUES</span></div><div class="line">(<span class="string">'s100102'</span>,<span class="string">'Adele'</span>,<span class="string">'女'</span>,<span class="number">20</span>,<span class="number">21</span>,<span class="keyword">TO_DATE</span>(<span class="string">'2017-3-22 11:23:10'</span>,<span class="string">'YYYY-MM-DD HH24:MI:SS'</span>),<span class="keyword">DEFAULT</span>,<span class="string">'1001'</span>);</div></pre></td></tr></table></figure></p>
-<p>说明:<br>1.列名(字段)可以省略,缺省时表示所有列名,值顺序按定义时的顺序书写<br>2.值得数量和顺序需与表后列名顺序一致,值得数据类型要与定义时一致<br>3.如果有默认列,这使用<code style="color:red">DEFAULT</code>卡位<br>4.多条数据插入有点蛋疼,不想MySQL那样用逗号分隔就可以了.贴个链接:<a href="http://www.cnblogs.com/mq0036/p/6370224.html" title="同时插入多条数据方法" target="_blank" rel="external">Oracle INSERT</a><br>5.Oracle INSET 可以将一个查询结果集 插入一个表,要求结果集和插入表结构一致上面链接给的方法大致思路就是这个~(≧▽≦)~啦啦啦.<code>NSERT INTO INFOS2 SELECT * FROM INFOS;</code></p>
+<p>说明:<br>1.列名(字段)可以省略,缺省时表示所有列名,值顺序按定义时的顺序书写<br>2.值得数量和顺序需与表后列名顺序一致,值得数据类型要与定义时一致<br>3.如果有默认列,这使用<code style="color:red">DEFAULT</code>卡位<br>4.多条数据插入有点蛋疼,不像MySQL那样用逗号分隔就可以了.贴个链接:<a href="http://www.cnblogs.com/mq0036/p/6370224.html" title="同时插入多条数据方法" target="_blank" rel="external">Oracle INSERT</a><br>5.Oracle INSET 可以将一个查询结果集 插入一个表,要求结果集和插入表结构一致上面链接给的方法大致思路就是这个~(≧▽≦)~啦啦啦.<code>INSERT INTO INFOS2 SELECT * FROM INFOS;</code></p>
 <h3 id="数据更新操作"><a href="#数据更新操作" class="headerlink" title="数据更新操作"></a>数据更新操作</h3><p><strong>语法结构:</strong> UPDATE 表名 SET 列名1 = 值,列名2 = 值… WHERE 条件<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">UPDATE</span> infos <span class="keyword">SET</span> classno = <span class="string">'1002'</span>,stuaddress = <span class="string">'美利坚'</span></div><div class="line"><span class="keyword">WHERE</span> stuname = <span class="string">'Adele'</span>;</div></pre></td></tr></table></figure></p>
 <p>说明:<br>1.必须添加WHERE条件限制,避免where 1 的情况发生,会修改全表的数据,那时你就哭去吧!</p>
 <h3 id="数据删除操作"><a href="#数据删除操作" class="headerlink" title="数据删除操作"></a>数据删除操作</h3><h4 id="DELETE-nbsp-nbsp-nbsp-nbsp-语法结构-DELETE-FROM-表名-WHERE-条件"><a href="#DELETE-nbsp-nbsp-nbsp-nbsp-语法结构-DELETE-FROM-表名-WHERE-条件" class="headerlink" title="DELETE  &nbsp;&nbsp;&nbsp;&nbsp;   语法结构: DELETE FROM 表名  WHERE 条件"></a>DELETE  &nbsp;&nbsp;&nbsp;&nbsp;   <strong>语法结构:</strong> DELETE FROM 表名  WHERE 条件</h4><h4 id="TRUNCATE-nbsp-nbsp-语法结构-TRUNCATE-TABLE-表名"><a href="#TRUNCATE-nbsp-nbsp-语法结构-TRUNCATE-TABLE-表名" class="headerlink" title="TRUNCATE &nbsp;&nbsp; 语法结构: TRUNCATE TABLE 表名"></a>TRUNCATE &nbsp;&nbsp; <strong>语法结构:</strong> TRUNCATE TABLE 表名</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> infos <span class="keyword">WHERE</span> stuname = <span class="string">'Adele'</span>;<span class="comment">--删除一条(多条看条件)语句</span></div><div class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> infos;<span class="comment">--表数据全部删除,相当于WHERE 1;</span></div><div class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">FROM</span> infos;</div></pre></td></tr></table></figure>
 <p>说明:<br>1.TRUNCATE 和 DELETE 都能把表中的数据全部删除，他们的区别是<br>&nbsp;&nbsp;&nbsp;a.TRUNCATE 是 DDL 命令，删除的数据不能恢复；<br>&nbsp;&nbsp;&nbsp;b.DELETE 命令是 DML 命令，删除后的数据可以通过日志文件恢复。<br>2.如果一个表中数据记录很多，TRUNCATE 相对 DELETE 速度快。<br>3.两种操作只删除表内数据,都会保留表结构,即成为空表.需区别于 <code>drop table</code> 语句<br>4.由于 TRUNCATE 命令比较<strong style="color:red;">危险</strong>，因此在实际开发中，<strong>TRUNCATE 命令慎用,到时哭去吧</strong>。</p>
-<h3 id="修改表操作"><a href="#修改表操作" class="headerlink" title="修改表操作"></a>修改表操作</h3><h4 id="修改表名"><a href="#修改表名" class="headerlink" title="修改表名"></a>修改表名</h4><h4 id="添加字段"><a href="#添加字段" class="headerlink" title="添加字段"></a>添加字段</h4><h4 id="删除字段"><a href="#删除字段" class="headerlink" title="删除字段"></a>删除字段</h4><h4 id="修改字段属性"><a href="#修改字段属性" class="headerlink" title="修改字段属性"></a>修改字段属性</h4><h4 id="修改约束"><a href="#修改约束" class="headerlink" title="修改约束"></a>修改约束</h4><h2 id="表数据查询语句-SELECT"><a href="#表数据查询语句-SELECT" class="headerlink" title="表数据查询语句 SELECT"></a>表数据查询语句 <em style="color:red;">SELECT</em></h2><p>Oracle 安装过后,默认会有一个SCOTT数据库旗下表结构和数据如下<br>序号  列名  类型  说明<br>1  EMPNO     NUMBER(4)  员工编号，EMP 表主键<br>2  ENAME     VARCHAR2(10)  员工姓名<br>3  JOB       VARCHAR2(9)  员工工作<br>4  MGR       NUMBER(4)  员工的领导编号，引用 EMPNO<br>5  HIREDATE  DATE  入职日期<br>6  SAL  NUMBER(7,2)  员工工资<br>7  COMM  NUMBER(7,2)  员工奖金<br>8  DEPTNO  NUMBER(2)  员工部门编号，是表 DEPT 的外键。</p>
+<h3 id="修改表操作"><a href="#修改表操作" class="headerlink" title="修改表操作"></a>修改表操作</h3><h4 id="修改表名"><a href="#修改表名" class="headerlink" title="修改表名"></a>修改表名</h4><h4 id="添加字段"><a href="#添加字段" class="headerlink" title="添加字段"></a>添加字段</h4><h4 id="删除字段"><a href="#删除字段" class="headerlink" title="删除字段"></a>删除字段</h4><h4 id="修改字段属性"><a href="#修改字段属性" class="headerlink" title="修改字段属性"></a>修改字段属性</h4><h4 id="修改约束"><a href="#修改约束" class="headerlink" title="修改约束"></a>修改约束</h4><h2 id="表数据查询语句-SELECT"><a href="#表数据查询语句-SELECT" class="headerlink" title="表数据查询语句 SELECT"></a>表数据查询语句 <em style="color:red;">SELECT</em></h2><p>为了方便查询训练,使用系统表进行查询练习.Oracle 安装过后,默认会有一个SCOTT数据库.其下有emp(雇员表) dept(部门表) bonus(薪资表) salgrade(薪水等级表),在此只列举一下emp表字段说明,表下数据使用<code>select * from scott.表名;</code>查询. </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">列名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">SCOTT.emp表结构</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">EMPNO</td>
+<td style="text-align:center">NUMBER(4)</td>
+<td style="text-align:center">员工编号，EMP 表主键</td>
+</tr>
+<tr>
+<td style="text-align:center">ENAME</td>
+<td style="text-align:center">VARCHAR2(10)</td>
+<td style="text-align:center">员工姓名</td>
+</tr>
+<tr>
+<td style="text-align:center">JOB</td>
+<td style="text-align:center">VARCHAR2(9)</td>
+<td style="text-align:center">员工工作</td>
+</tr>
+<tr>
+<td style="text-align:center">MGR</td>
+<td style="text-align:center">NUMBER(4)</td>
+<td style="text-align:center">员工的领导编号，引用 EMPNO</td>
+</tr>
+<tr>
+<td style="text-align:center">HIREDATE</td>
+<td style="text-align:center">DATE</td>
+<td style="text-align:center">入职日期</td>
+</tr>
+<tr>
+<td style="text-align:center">SAL</td>
+<td style="text-align:center">NUMBER(7,2)</td>
+<td style="text-align:center">员工工资</td>
+</tr>
+<tr>
+<td style="text-align:center">COMM</td>
+<td style="text-align:center">NUMBER(7,2)</td>
+<td style="text-align:center">员工奖金</td>
+</tr>
+<tr>
+<td style="text-align:center">DEPTNO</td>
+<td style="text-align:center">NUMBER(2)</td>
+<td style="text-align:center">员工部门编号，是表 DEPT 的外键。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="select-语法结构"><a href="#select-语法结构" class="headerlink" title="select 语法结构"></a>select 语法结构</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> [ALL|<span class="keyword">DISTINCT</span>] <span class="comment">--ALL 显示所有结果,DISTINCT 返回去 &lt;span style="color:red;"&gt;重复行&lt;/span&gt; 后的结果集 </span></div><div class="line">&#123;*|talbe.*|[table.]field1[<span class="keyword">AS</span> alias1][,[table.]field2[<span class="keyword">AS</span> alias2][,…]]&#125; </div><div class="line"><span class="keyword">FROM</span> <span class="keyword">table</span> expression[,…][<span class="keyword">IN</span> externaldatabase] <span class="comment">--查询的表或视图或子查询结果集</span></div><div class="line">[<span class="keyword">WHERE</span>…] <span class="comment">-- 条件语句</span></div><div class="line">[<span class="keyword">GROUP</span> <span class="keyword">BY</span>…] <span class="comment">-- 分组语句</span></div><div class="line">[<span class="keyword">HAVING</span>…] <span class="comment">--分组筛选语句</span></div><div class="line">[<span class="keyword">ORDER</span> <span class="keyword">BY</span>…] <span class="comment">--排序语句</span></div><div class="line">[<span class="keyword">WITH</span> OWNERACCESS <span class="keyword">OPTION</span>] <span class="comment">--**账户权限,不是很清楚**</span></div></pre></td></tr></table></figure>
+<p><strong>注意事项:</strong><br>1.当使用非scott身份登录数据库的如system 运行下面语句会报错:ORA-00942 表或视图不存在,解决办法: 方法1.使用scott登录数据库 ;方法2.将emp改写为scott.emp,加上所有者.<br>2.为避免上述问题,养成写上<strong>所有者.表名</strong>的好习惯.具体操作看公司规范.<br>3.多表联合查询时,如果多个表中具有相同的字段(列名),未避免字段产生歧义,加上 <strong>表.列名</strong>或  <strong>库.表.列名</strong><br>4.。。。未完待续。。。</p>
+<h3 id="select-运算符"><a href="#select-运算符" class="headerlink" title="select 运算符"></a>select 运算符</h3><p>一般用于<code>where</code>语句和 <code>列</code>中</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">等于</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&gt;,!=</td>
+<td style="text-align:center">不等于</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">大于</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;=</td>
+<td style="text-align:center">大于等于</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">小于</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;=</td>
+<td style="text-align:center">小于等于</td>
+</tr>
+<tr>
+<td style="text-align:center">BETWEEN…AND…</td>
+<td style="text-align:center">在两个值之间</td>
+</tr>
+<tr>
+<td style="text-align:center">IN</td>
+<td style="text-align:center">在一组值得范围内</td>
+</tr>
+<tr>
+<td style="text-align:center">LIKE</td>
+<td style="text-align:center">匹配字符串,’A%’匹配开头有’A’,’%A%’,匹配中间有’A’…</td>
+</tr>
+<tr>
+<td style="text-align:center">IS NULL</td>
+<td style="text-align:center">值为空,WHERE x = NULL是错误的</td>
+</tr>
+<tr>
+<td style="text-align:center">ROWNUM</td>
+<td style="text-align:center">结果集行数,具体条数</td>
+</tr>
+<tr>
+<td style="text-align:center">AS</td>
+<td style="text-align:center">列别名</td>
+</tr>
+<tr>
+<td style="text-align:center">&#124;&#124;</td>
+<td style="text-align:center">链接字符串,功能与concat(str1,str2)相似</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> ENAME,SAL,(SAL*<span class="number">12</span>) <span class="keyword">AS</span> 年薪  <span class="keyword">FROM</span> EMP <span class="keyword">WHERE</span> SAL&gt;<span class="number">1000</span>+<span class="number">1000</span>;<span class="comment">--查询查询薪资大于2000的员工姓名,月薪,年薪</span></div><div class="line"><span class="keyword">SELECT</span> ename ,sal <span class="keyword">FROM</span> scott.emp <span class="keyword">WHERE</span> sal <span class="keyword">BETWEEN</span> <span class="number">3000</span> <span class="keyword">AND</span> <span class="number">5000</span>;<span class="comment">--查询月薪在3000 到5000之间的员工</span></div><div class="line"><span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> scott.emp <span class="keyword">WHERE</span> ename <span class="keyword">LIKE</span> <span class="string">'_A%'</span>;<span class="comment">--查询员工名第二个字母为A的员工 ,% 为模糊匹配, _ 为字符串占位符(鄙人如此理解,不知对不对)</span></div><div class="line"><span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> scott.emp <span class="keyword">WHERE</span> ename <span class="keyword">LIKE</span> <span class="string">'%A%'</span> <span class="keyword">rownum</span>&lt;<span class="number">2</span>;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -798,7 +924,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Oracle-简介"><span class="nav-number">1.</span> <span class="nav-text">Oracle 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-基本术语"><span class="nav-number">1.1.</span> <span class="nav-text">Oracle 基本术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据字典"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据文件"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制文件"><span class="nav-number">1.1.3.</span> <span class="nav-text">控制文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志文件"><span class="nav-number">1.1.4.</span> <span class="nav-text">日志文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表空间"><span class="nav-number">1.1.5.</span> <span class="nav-text">表空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#段"><span class="nav-number">1.1.6.</span> <span class="nav-text">段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区"><span class="nav-number">1.1.7.</span> <span class="nav-text">区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据块"><span class="nav-number">1.1.8.</span> <span class="nav-text">数据块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#账户类型"><span class="nav-number">1.1.9.</span> <span class="nav-text">账户类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键约束"><span class="nav-number">1.1.10.</span> <span class="nav-text">键约束</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型示例"><span class="nav-number">1.2.1.</span> <span class="nav-text">数据类型示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL语言"><span class="nav-number">2.</span> <span class="nav-text">SQL语言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令行查询数据库参数"><span class="nav-number">3.</span> <span class="nav-text">命令行查询数据库参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看数据库信息"><span class="nav-number">3.1.</span> <span class="nav-text">查看数据库信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看数据库名"><span class="nav-number">3.1.1.</span> <span class="nav-text">查看数据库名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询当前数据库实例名"><span class="nav-number">3.1.2.</span> <span class="nav-text">查询当前数据库实例名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表操作"><span class="nav-number">3.2.</span> <span class="nav-text">表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据表"><span class="nav-number">3.2.1.</span> <span class="nav-text">创建数据表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据插入操作"><span class="nav-number">3.2.2.</span> <span class="nav-text">数据插入操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据更新操作"><span class="nav-number">3.2.3.</span> <span class="nav-text">数据更新操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据删除操作"><span class="nav-number">3.2.4.</span> <span class="nav-text">数据删除操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DELETE-nbsp-nbsp-nbsp-nbsp-语法结构-DELETE-FROM-表名-WHERE-条件"><span class="nav-number">3.2.4.1.</span> <span class="nav-text">DELETE         语法结构: DELETE FROM 表名  WHERE 条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TRUNCATE-nbsp-nbsp-语法结构-TRUNCATE-TABLE-表名"><span class="nav-number">3.2.4.2.</span> <span class="nav-text">TRUNCATE    语法结构: TRUNCATE TABLE 表名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改表操作"><span class="nav-number">3.2.5.</span> <span class="nav-text">修改表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改表名"><span class="nav-number">3.2.5.1.</span> <span class="nav-text">修改表名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加字段"><span class="nav-number">3.2.5.2.</span> <span class="nav-text">添加字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除字段"><span class="nav-number">3.2.5.3.</span> <span class="nav-text">删除字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改字段属性"><span class="nav-number">3.2.5.4.</span> <span class="nav-text">修改字段属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改约束"><span class="nav-number">3.2.5.5.</span> <span class="nav-text">修改约束</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表数据查询语句-SELECT"><span class="nav-number">3.3.</span> <span class="nav-text">表数据查询语句 SELECT</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Oracle-简介"><span class="nav-number">1.</span> <span class="nav-text">Oracle 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-基本术语"><span class="nav-number">1.1.</span> <span class="nav-text">Oracle 基本术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据字典"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据文件"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制文件"><span class="nav-number">1.1.3.</span> <span class="nav-text">控制文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志文件"><span class="nav-number">1.1.4.</span> <span class="nav-text">日志文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表空间"><span class="nav-number">1.1.5.</span> <span class="nav-text">表空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#段"><span class="nav-number">1.1.6.</span> <span class="nav-text">段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区"><span class="nav-number">1.1.7.</span> <span class="nav-text">区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据块"><span class="nav-number">1.1.8.</span> <span class="nav-text">数据块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#账户类型"><span class="nav-number">1.1.9.</span> <span class="nav-text">账户类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键约束"><span class="nav-number">1.1.10.</span> <span class="nav-text">键约束</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型示例"><span class="nav-number">1.2.1.</span> <span class="nav-text">数据类型示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL语言"><span class="nav-number">2.</span> <span class="nav-text">SQL语言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令行查询数据库参数"><span class="nav-number">3.</span> <span class="nav-text">命令行查询数据库参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看数据库信息"><span class="nav-number">3.1.</span> <span class="nav-text">查看数据库信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看数据库名"><span class="nav-number">3.1.1.</span> <span class="nav-text">查看数据库名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询当前数据库实例名"><span class="nav-number">3.1.2.</span> <span class="nav-text">查询当前数据库实例名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表操作"><span class="nav-number">3.2.</span> <span class="nav-text">表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据表"><span class="nav-number">3.2.1.</span> <span class="nav-text">创建数据表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据插入操作"><span class="nav-number">3.2.2.</span> <span class="nav-text">数据插入操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据更新操作"><span class="nav-number">3.2.3.</span> <span class="nav-text">数据更新操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据删除操作"><span class="nav-number">3.2.4.</span> <span class="nav-text">数据删除操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DELETE-nbsp-nbsp-nbsp-nbsp-语法结构-DELETE-FROM-表名-WHERE-条件"><span class="nav-number">3.2.4.1.</span> <span class="nav-text">DELETE         语法结构: DELETE FROM 表名  WHERE 条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TRUNCATE-nbsp-nbsp-语法结构-TRUNCATE-TABLE-表名"><span class="nav-number">3.2.4.2.</span> <span class="nav-text">TRUNCATE    语法结构: TRUNCATE TABLE 表名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改表操作"><span class="nav-number">3.2.5.</span> <span class="nav-text">修改表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改表名"><span class="nav-number">3.2.5.1.</span> <span class="nav-text">修改表名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加字段"><span class="nav-number">3.2.5.2.</span> <span class="nav-text">添加字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除字段"><span class="nav-number">3.2.5.3.</span> <span class="nav-text">删除字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改字段属性"><span class="nav-number">3.2.5.4.</span> <span class="nav-text">修改字段属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改约束"><span class="nav-number">3.2.5.5.</span> <span class="nav-text">修改约束</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表数据查询语句-SELECT"><span class="nav-number">3.3.</span> <span class="nav-text">表数据查询语句 SELECT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#select-语法结构"><span class="nav-number">3.3.1.</span> <span class="nav-text">select 语法结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-运算符"><span class="nav-number">3.3.2.</span> <span class="nav-text">select 运算符</span></a></li></ol></li></ol></li></ol></div>
                        
           </div>
           
