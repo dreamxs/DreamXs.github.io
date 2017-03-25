@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="笔记,Oracle," />
+  <meta name="keywords" content="笔记,Oracle,数据库,SQL,PL/SQL," />
 
 
 
@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://dreamxs.github.io/2017/03/Oracle-笔记/oracle/oracle_database_11g.gif">
 <meta property="og:image" content="http://dreamxs.github.io/2017/03/Oracle-笔记/oracle/duan.png">
 <meta property="og:image" content="http://dreamxs.github.io/2017/03/Oracle-笔记/oracle/oracleblock.png">
-<meta property="og:updated_time" content="2017-03-24T15:55:31.077Z">
+<meta property="og:updated_time" content="2017-03-25T15:51:24.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle 笔记">
 <meta name="twitter:description" content="Oracle 简介Oracle Database，又名Oracle RDBMS，或简称Oracle。是甲骨文公司的一款关系数据库管理系统。它是在数据库领域一直处于领先地位的产品。可以说Oracle数据库系统是目前世界上流行的关系数据库管理系统，系统可移植性好、使用方便、功能强，适用于各类大、中、小、微机环境。它是一种高效率、可靠性好的 适应高吞吐量的数据库解决方案。">
@@ -382,7 +382,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">字数统计:</span>
-           <span class="post-count">4,119(字)</span>
+           <span class="post-count">7,934(字)</span>
            
          </span>
 	  
@@ -392,7 +392,7 @@
              <i class="fa fa-calendar-o"></i>
            </span>
            <span class="post-meta-item-text">阅读时长:</span>
-           <span class="post-count">15(分)</span>
+           <span class="post-count">30(分)</span>
            
          </span>
 <!-- 以上部分为：字数统计、阅读时长插入代码  -->
@@ -454,7 +454,7 @@
 <td style="text-align:center">不能以NORMAL登陆，默认管理员</td>
 </tr>
 <tr>
-<td style="text-align:center">syste:mmanager</td>
+<td style="text-align:center">system:manager</td>
 <td style="text-align:center">SYSDBA或NORMAL</td>
 <td style="text-align:center">不能以SYSOPER登陆，默认管理员</td>
 </tr>
@@ -554,6 +554,7 @@
 </tr>
 </tbody>
 </table>
+<hr>
 <h1 id="SQL语言"><a href="#SQL语言" class="headerlink" title="SQL语言"></a>SQL语言</h1><p> SQL （Structured Query Language ）语言是一种在关系数据库中定义和操作数据的标准语言，是用户与数据库之间进行交流的窗口。<br> 具有 <strong>综合统一,高度非过程化,面向集合的操作方式,同一种语法结构提供两种使用方式,语言简单、易学易用</strong> 等特点</p>
 <table>
 <thead>
@@ -573,18 +574,21 @@
 </tr>
 </tbody>
 </table>
-<h1 id="命令行查询数据库参数"><a href="#命令行查询数据库参数" class="headerlink" title="命令行查询数据库参数"></a>命令行查询数据库参数</h1><p><strong>说明: 为方便阅读,本文将SQL的<code style="color:red">关键字</code> (语法高亮部分)全用大写字母 ,<code style="color:red">表名</code>和<code style="color:red">表字段</code>用小写字母</strong><br><strong style="color:red">??求教??:</strong> 用了几天oracle 的管理工具,sql developer PL/SQL 查询的时候都是显示的大写的字段名,而且添加数据使用大写的字段名都是可以的啊.如果没记错的话,oracle是区分大小写的.这就无法理解了,难道Oracle做了处理?有清楚的留个言交流下</p>
-<h2 id="查看数据库信息"><a href="#查看数据库信息" class="headerlink" title="查看数据库信息"></a>查看数据库信息</h2><h3 id="查看数据库名"><a href="#查看数据库名" class="headerlink" title="查看数据库名"></a>查看数据库名</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> v$<span class="keyword">database</span>;(注意权限)</div><div class="line"><span class="keyword">show</span> parameter db;</div><div class="line"><span class="comment">---------输出如下:---------</span></div><div class="line">NAME</div><div class="line"><span class="comment">---------</span></div><div class="line">XSP</div></pre></td></tr></table></figure>
-<h3 id="查询当前数据库实例名"><a href="#查询当前数据库实例名" class="headerlink" title="查询当前数据库实例名"></a>查询当前数据库实例名</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> instance_name <span class="keyword">from</span> v$<span class="keyword">instance</span>;</div><div class="line"><span class="keyword">show</span> parameter <span class="keyword">instance</span>;</div><div class="line">    <span class="comment">---------输出如下:------</span></div><div class="line">    NAME                                 TYPE        VALUE</div><div class="line">	<span class="comment">------------------------------------ ----------- ------------------------------</span></div><div class="line">	active_instance_count                integer</div><div class="line">	cluster_database_instances           integer     1</div><div class="line">	instance_groups                      string                        </div><div class="line">	instance_name                        string      xsp</div><div class="line">	instance_number                      integer     0</div><div class="line">	instance_type                        string      RDBMS</div><div class="line">	open_links_per_instance              integer     4</div><div class="line">	parallel_instance_group              string</div><div class="line">	parallel_server_instances            integer     1</div></pre></td></tr></table></figure>
-<h2 id="表操作"><a href="#表操作" class="headerlink" title="表操作"></a>表操作</h2><h3 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h3><p><strong>语法结构:</strong> CREATE TABLE 表名(字段名1 数据类型 约束,字段名2 数据类型 约束,)<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> infos <span class="comment">--infos 为学生表,默认建立在system数据库下</span></div><div class="line">(</div><div class="line">stuid VARCHAR2(<span class="number">7</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--学号 格式: 'S'+班级号+2位序号</span></div><div class="line">stuname VARCHAR2(<span class="number">10</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--姓名</span></div><div class="line">gender VARCHAR2(<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--性别</span></div><div class="line">age <span class="built_in">NUMBER</span>(<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--年龄</span></div><div class="line">seat <span class="built_in">number</span> <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--座位号</span></div><div class="line">enrolldate <span class="built_in">date</span>, <span class="comment">--入学时间</span></div><div class="line">stuaddress VARCHAR2(<span class="number">50</span>) <span class="keyword">default</span> <span class="string">'地址不详'</span> <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--地址</span></div><div class="line">classno VARCHAR2(<span class="number">4</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="comment">--班号 学期序号+班级号 </span></div><div class="line">)<span class="comment">--建表语句 CREATE TABLE 表名 结束</span></div><div class="line">/</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> infos <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> PK_INFOS PRIMARY <span class="keyword">KEY</span>(stuid);</div></pre></td></tr></table></figure></p>
-<p>说明:<br>1.在代码行中使用 ‘–’可以添加单行注释 ‘/**/‘添加多行注释<br>2.在 Oracle 代码中，“/”执行缓存区中的语句，由于缓冲区中只存储一条刚刚保存过的语句，由于每条语句没有用分号结尾，只是保存在缓冲区，因此每条语句后面都有单独一行“/”。<br>3.<code>ALTER TABLE 表名</code>, 用来修改表属性 之后详解</p>
-<h3 id="数据插入操作"><a href="#数据插入操作" class="headerlink" title="数据插入操作"></a>数据插入操作</h3><p><strong>语法结构:</strong> INSTER INTO 表名(列名1,列名2…) VALUES (值1,值2)<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> infos </div><div class="line"><span class="keyword">VALUES</span></div><div class="line">(<span class="string">'s100102'</span>,<span class="string">'Adele'</span>,<span class="string">'女'</span>,<span class="number">20</span>,<span class="number">21</span>,<span class="keyword">TO_DATE</span>(<span class="string">'2017-3-22 11:23:10'</span>,<span class="string">'YYYY-MM-DD HH24:MI:SS'</span>),<span class="keyword">DEFAULT</span>,<span class="string">'1001'</span>);</div></pre></td></tr></table></figure></p>
-<p>说明:<br>1.列名(字段)可以省略,缺省时表示所有列名,值顺序按定义时的顺序书写<br>2.值得数量和顺序需与表后列名顺序一致,值得数据类型要与定义时一致<br>3.如果有默认列,这使用<code style="color:red">DEFAULT</code>卡位<br>4.多条数据插入有点蛋疼,不像MySQL那样用逗号分隔就可以了.贴个链接:<a href="http://www.cnblogs.com/mq0036/p/6370224.html" title="同时插入多条数据方法" target="_blank" rel="external">Oracle INSERT</a><br>5.Oracle INSET 可以将一个查询结果集 插入一个表,要求结果集和插入表结构一致上面链接给的方法大致思路就是这个~(≧▽≦)~啦啦啦.<code>INSERT INTO INFOS2 SELECT * FROM INFOS;</code></p>
-<h3 id="数据更新操作"><a href="#数据更新操作" class="headerlink" title="数据更新操作"></a>数据更新操作</h3><p><strong>语法结构:</strong> UPDATE 表名 SET 列名1 = 值,列名2 = 值… WHERE 条件<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">UPDATE</span> infos <span class="keyword">SET</span> classno = <span class="string">'1002'</span>,stuaddress = <span class="string">'美利坚'</span></div><div class="line"><span class="keyword">WHERE</span> stuname = <span class="string">'Adele'</span>;</div></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="手码代码之增删改查"><a href="#手码代码之增删改查" class="headerlink" title="手码代码之增删改查"></a>手码代码之增删改查</h1><p><strong>说明: 为方便阅读,本文将SQL的<code style="color:red">关键字</code> (语法高亮部分)全用大写字母 ,<code style="color:red">表名</code>和<code style="color:red">表字段</code>用小写字母</strong><br><strong style="color:red">??求教??:</strong> 用了几天oracle 的管理工具,sql developer PL/SQL 查询的时候都是显示的大写的字段名,而且添加数据使用大写的字段名都是可以的啊.如果没记错的话,oracle是区分大小写的.这就无法理解了,难道Oracle做了处理?有清楚的留个言交流下</p>
+<h2 id="数据库管理"><a href="#数据库管理" class="headerlink" title="数据库管理"></a>数据库管理</h2><h3 id="查看数据库名"><a href="#查看数据库名" class="headerlink" title="查看数据库名"></a>查看数据库名</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> v$<span class="keyword">database</span>;(注意权限)</div><div class="line"><span class="keyword">show</span> parameter db;</div><div class="line"><span class="comment">---------输出如下:---------</span></div><div class="line">NAME</div><div class="line"><span class="comment">---------</span></div><div class="line">XSP</div></pre></td></tr></table></figure>
+<h3 id="查询当前数据库实例名"><a href="#查询当前数据库实例名" class="headerlink" title="查询当前数据库实例名"></a>查询当前数据库实例名</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> instance_name <span class="keyword">from</span> v$<span class="keyword">instance</span>;</div><div class="line"><span class="keyword">show</span> parameter <span class="keyword">instance</span>;</div></pre></td></tr></table></figure>
+<h2 id="表管理"><a href="#表管理" class="headerlink" title="表管理"></a>表管理</h2><h3 id="创建数据表—create"><a href="#创建数据表—create" class="headerlink" title="创建数据表—create"></a>创建数据表—create</h3><p><strong>语法结构:</strong> CREATE TABLE 表名(字段名1 数据类型 约束,字段名2 数据类型 约束,)<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> infos <span class="comment">--infos 为学生表,默认建立在system数据库下</span></div><div class="line">(</div><div class="line">stuid VARCHAR2(<span class="number">7</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--学号 格式: 'S'+班级号+2位序号</span></div><div class="line">stuname VARCHAR2(<span class="number">10</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--姓名</span></div><div class="line">gender VARCHAR2(<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--性别</span></div><div class="line">age <span class="built_in">NUMBER</span>(<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--年龄</span></div><div class="line">seat <span class="built_in">number</span> <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--座位号</span></div><div class="line">enrolldate <span class="built_in">date</span>, <span class="comment">--入学时间</span></div><div class="line">stuaddress VARCHAR2(<span class="number">50</span>) <span class="keyword">default</span> <span class="string">'地址不详'</span> <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--地址</span></div><div class="line">classno VARCHAR2(<span class="number">4</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="comment">--班号 学期序号+班级号 </span></div><div class="line">)<span class="comment">--建表语句 CREATE TABLE 表名 结束</span></div><div class="line">/</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> infos <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> PK_INFOS PRIMARY <span class="keyword">KEY</span>(stuid);</div></pre></td></tr></table></figure></p>
+<p>说明:<br>1.在代码行中使用 ‘–’可以添加单行注释 ‘/**/‘添加多行注释<br>2.在 Oracle 代码中，“/”执行缓存区中的语句，由于缓冲区中只存储一条刚刚保存过的语句，由于每条语句没有用分号结尾，只是保存在缓冲区，因此每条语句后面都有单独一行“/”。<br>3.<code>ALTER TABLE 表名</code>, 用来修改表属性 之后详解。</p>
+<h3 id="删除表—drop"><a href="#删除表—drop" class="headerlink" title="删除表—drop"></a>删除表—drop</h3><p><code>DROP TABLE 表名 CASCADE CONSTRAINTS;-- CASCADE CONSTRAINTS 表示将级联约束条件一起删除,免得占用约束名</code></p>
+<h3 id="修改表操作"><a href="#修改表操作" class="headerlink" title="修改表操作"></a>修改表操作</h3><h4 id="修改表名"><a href="#修改表名" class="headerlink" title="修改表名"></a>修改表名</h4><h4 id="添加字段"><a href="#添加字段" class="headerlink" title="添加字段"></a>添加字段</h4><h4 id="删除字段"><a href="#删除字段" class="headerlink" title="删除字段"></a>删除字段</h4><h4 id="修改字段属性"><a href="#修改字段属性" class="headerlink" title="修改字段属性"></a>修改字段属性</h4><h4 id="修改约束"><a href="#修改约束" class="headerlink" title="修改约束"></a>修改约束</h4><h3 id="数据插入操作—insert"><a href="#数据插入操作—insert" class="headerlink" title="数据插入操作—insert"></a>数据插入操作—<em style="color:red;">insert</em></h3><p><strong>语法结构:</strong> INSTER INTO 表名(列名1,列名2…) VALUES (值1,值2)<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> infos </div><div class="line"><span class="keyword">VALUES</span></div><div class="line">(<span class="string">'s100102'</span>,<span class="string">'Adele'</span>,<span class="string">'女'</span>,<span class="number">20</span>,<span class="number">21</span>,<span class="keyword">TO_DATE</span>(<span class="string">'2017-3-22 11:23:10'</span>,<span class="string">'YYYY-MM-DD HH24:MI:SS'</span>),<span class="keyword">DEFAULT</span>,<span class="string">'1001'</span>);</div></pre></td></tr></table></figure></p>
+<p>说明:<br>1.列名(字段)可以省略,缺省时表示所有列名,值顺序按定义时的顺序书写<br>2.值得数量和顺序需与表后列名顺序一致,值得数据类型要与定义时一致<br>3.如果有默认列,这时用<code style="color:red">DEFAULT</code>卡位<br>4.多条数据插入有点蛋疼,不像MySQL那样用逗号分隔就可以了。贴个链接:<a href="http://www.cnblogs.com/mq0036/p/6370224.html" title="同时插入多条数据方法" target="_blank" rel="external">Oracle INSERT</a><br>5.Oracle <code>INSET</code>可以将一个查询结果集 插入一个表,要求结果集和插入表结构一致上面链接给的方法大致思路就是这个~(≧▽≦)~啦啦啦.<code>INSERT INTO INFOS2 SELECT * FROM INFOS;</code></p>
+<h3 id="数据更新操作—update"><a href="#数据更新操作—update" class="headerlink" title="数据更新操作—update"></a>数据更新操作—<em style="color:red;">update</em></h3><p><strong>语法结构:</strong> UPDATE 表名 SET 列名1 = 值,列名2 = 值… WHERE 条件<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">UPDATE</span> infos <span class="keyword">SET</span> classno = <span class="string">'1002'</span>,stuaddress = <span class="string">'美利坚'</span></div><div class="line"><span class="keyword">WHERE</span> stuname = <span class="string">'Adele'</span>;</div></pre></td></tr></table></figure></p>
 <p>说明:<br>1.必须添加WHERE条件限制,避免where 1 的情况发生,会修改全表的数据,那时你就哭去吧!</p>
-<h3 id="数据删除操作"><a href="#数据删除操作" class="headerlink" title="数据删除操作"></a>数据删除操作</h3><h4 id="DELETE-nbsp-nbsp-nbsp-nbsp-语法结构-DELETE-FROM-表名-WHERE-条件"><a href="#DELETE-nbsp-nbsp-nbsp-nbsp-语法结构-DELETE-FROM-表名-WHERE-条件" class="headerlink" title="DELETE  &nbsp;&nbsp;&nbsp;&nbsp;   语法结构: DELETE FROM 表名  WHERE 条件"></a>DELETE  &nbsp;&nbsp;&nbsp;&nbsp;   <strong>语法结构:</strong> DELETE FROM 表名  WHERE 条件</h4><h4 id="TRUNCATE-nbsp-nbsp-语法结构-TRUNCATE-TABLE-表名"><a href="#TRUNCATE-nbsp-nbsp-语法结构-TRUNCATE-TABLE-表名" class="headerlink" title="TRUNCATE &nbsp;&nbsp; 语法结构: TRUNCATE TABLE 表名"></a>TRUNCATE &nbsp;&nbsp; <strong>语法结构:</strong> TRUNCATE TABLE 表名</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> infos <span class="keyword">WHERE</span> stuname = <span class="string">'Adele'</span>;<span class="comment">--删除一条(多条看条件)语句</span></div><div class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> infos;<span class="comment">--表数据全部删除,相当于WHERE 1;</span></div><div class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">FROM</span> infos;</div></pre></td></tr></table></figure>
+<h3 id="数据删除操作—delete"><a href="#数据删除操作—delete" class="headerlink" title="数据删除操作—delete"></a>数据删除操作—<em style="color:red;">delete</em></h3><p>DELETE<br><strong>语法结构:</strong> DELETE FROM 表名  WHERE 条件<br>TRUNCATE<br><strong>语法结构:</strong> TRUNCATE TABLE 表名</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> infos <span class="keyword">WHERE</span> stuname = <span class="string">'Adele'</span>;<span class="comment">--删除一条(多条看条件)语句</span></div><div class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> infos;<span class="comment">--表数据全部删除,相当于WHERE 条件为真;</span></div><div class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">FROM</span> infos;</div></pre></td></tr></table></figure>
 <p>说明:<br>1.TRUNCATE 和 DELETE 都能把表中的数据全部删除，他们的区别是<br>&nbsp;&nbsp;&nbsp;a.TRUNCATE 是 DDL 命令，删除的数据不能恢复；<br>&nbsp;&nbsp;&nbsp;b.DELETE 命令是 DML 命令，删除后的数据可以通过日志文件恢复。<br>2.如果一个表中数据记录很多，TRUNCATE 相对 DELETE 速度快。<br>3.两种操作只删除表内数据,都会保留表结构,即成为空表.需区别于 <code>drop table</code> 语句<br>4.由于 TRUNCATE 命令比较<strong style="color:red;">危险</strong>，因此在实际开发中，<strong>TRUNCATE 命令慎用,到时哭去吧</strong>。</p>
-<h3 id="修改表操作"><a href="#修改表操作" class="headerlink" title="修改表操作"></a>修改表操作</h3><h4 id="修改表名"><a href="#修改表名" class="headerlink" title="修改表名"></a>修改表名</h4><h4 id="添加字段"><a href="#添加字段" class="headerlink" title="添加字段"></a>添加字段</h4><h4 id="删除字段"><a href="#删除字段" class="headerlink" title="删除字段"></a>删除字段</h4><h4 id="修改字段属性"><a href="#修改字段属性" class="headerlink" title="修改字段属性"></a>修改字段属性</h4><h4 id="修改约束"><a href="#修改约束" class="headerlink" title="修改约束"></a>修改约束</h4><h2 id="表数据查询语句-SELECT"><a href="#表数据查询语句-SELECT" class="headerlink" title="表数据查询语句 SELECT"></a>表数据查询语句 <em style="color:red;">SELECT</em></h2><p>为了方便查询训练,使用系统表进行查询练习.Oracle 安装过后,默认会有一个SCOTT数据库.其下有emp(雇员表) dept(部门表) bonus(薪资表) salgrade(薪水等级表),在此只列举一下emp表字段说明,表下数据使用<code>select * from scott.表名;</code>查询. </p>
+<h2 id="表数据查询语句-—select"><a href="#表数据查询语句-—select" class="headerlink" title="表数据查询语句 —select"></a>表数据查询语句 —<em style="color:red;">select</em></h2><p>为了方便查询训练,使用系统表进行查询练习.Oracle 安装过后,默认会有一个SCOTT数据库.其下有emp(雇员表) dept(部门表) bonus(薪资表) salgrade(薪水等级表),在此只列举一下emp表字段说明,表下数据使用<code>select * from scott.表名;</code>查询. </p>
 <table>
 <thead>
 <tr>
@@ -641,7 +645,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="select-语法结构"><a href="#select-语法结构" class="headerlink" title="select 语法结构"></a>select 语法结构</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> [ALL|<span class="keyword">DISTINCT</span>] <span class="comment">--ALL 显示所有结果,DISTINCT 返回去 &lt;span style="color:red;"&gt;重复行&lt;/span&gt; 后的结果集 </span></div><div class="line">&#123;*|talbe.*|[table.]field1[<span class="keyword">AS</span> alias1][,[table.]field2[<span class="keyword">AS</span> alias2][,…]]&#125; </div><div class="line"><span class="keyword">FROM</span> <span class="keyword">table</span> expression[,…][<span class="keyword">IN</span> externaldatabase] <span class="comment">--查询的表或视图或子查询结果集</span></div><div class="line">[<span class="keyword">WHERE</span>…] <span class="comment">-- 条件语句</span></div><div class="line">[<span class="keyword">GROUP</span> <span class="keyword">BY</span>…] <span class="comment">-- 分组语句</span></div><div class="line">[<span class="keyword">HAVING</span>…] <span class="comment">--用于分组筛选语句,不能单独使用</span></div><div class="line">[<span class="keyword">ORDER</span> <span class="keyword">BY</span>…] <span class="comment">--排序语句</span></div><div class="line">[<span class="keyword">WITH</span> OWNERACCESS <span class="keyword">OPTION</span>] <span class="comment">--**账户权限,不是很清楚**</span></div></pre></td></tr></table></figure>
+<h3 id="select-语法结构"><a href="#select-语法结构" class="headerlink" title="select 语法结构"></a>select 语法结构</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> [ALL|<span class="keyword">DISTINCT</span>] <span class="comment">--ALL 显示所有结果,DISTINCT 返回去 重复行 后的结果集 </span></div><div class="line">&#123;*|talbe.*|[table.]field1[<span class="keyword">AS</span> alias1][,[table.]field2[<span class="keyword">AS</span> alias2][,…]]&#125; </div><div class="line"><span class="keyword">FROM</span> <span class="keyword">table</span> expression[,…][<span class="keyword">IN</span> externaldatabase] <span class="comment">--查询的表或视图或子查询结果集</span></div><div class="line">[<span class="keyword">WHERE</span>…]                  <span class="comment">-- 条件语句</span></div><div class="line">[<span class="keyword">GROUP</span> <span class="keyword">BY</span>…]               <span class="comment">-- 分组语句</span></div><div class="line">[<span class="keyword">HAVING</span>…]                 <span class="comment">--用于分组筛选语句,不能单独使用</span></div><div class="line">[<span class="keyword">ORDER</span> <span class="keyword">BY</span>…]               <span class="comment">--排序语句</span></div><div class="line">[<span class="keyword">WITH</span> OWNERACCESS <span class="keyword">OPTION</span>] <span class="comment">--账户权限,不是很清楚</span></div></pre></td></tr></table></figure>
 <p><strong>注意事项:</strong><br>1.当使用非scott身份登录数据库的如system 运行下面语句会报错:ORA-00942 表或视图不存在,解决办法: 方法1.使用scott登录数据库 ;方法2.将emp改写为scott.emp,加上所有者.<br>2.为避免上述问题,养成写上<strong>所有者.表名</strong>的好习惯.具体操作看公司规范.<br>3.多表联合查询时,如果多个表中具有相同的字段(列名),未避免字段产生歧义,加上 <strong>表.列名</strong>或  <strong>库.表.列名</strong><br>4.。。。未完待续。。。</p>
 <h3 id="select-运算符关键字"><a href="#select-运算符关键字" class="headerlink" title="select 运算符关键字"></a>select 运算符关键字</h3><p>一般用于<code>where</code>语句和 <code>列</code>中</p>
 <table>
@@ -707,11 +711,202 @@
 </tbody>
 </table>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> ENAME,SAL,(SAL*<span class="number">12</span>) <span class="keyword">AS</span> 年薪  <span class="keyword">FROM</span> EMP <span class="keyword">WHERE</span> SAL&gt;<span class="number">1000</span>+<span class="number">1000</span>;<span class="comment">--查询查询薪资大于2000的员工姓名,月薪,年薪</span></div><div class="line"><span class="keyword">SELECT</span> ename ,sal <span class="keyword">FROM</span> scott.emp <span class="keyword">WHERE</span> sal <span class="keyword">BETWEEN</span> <span class="number">3000</span> <span class="keyword">AND</span> <span class="number">5000</span>;<span class="comment">--查询月薪在3000 到5000之间的员工</span></div><div class="line"><span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> scott.emp <span class="keyword">WHERE</span> ename <span class="keyword">LIKE</span> <span class="string">'_A%'</span>;<span class="comment">--查询员工名第二个字母为A的员工 ,% 为模糊匹配, _为任意单个字符(鄙人理解就是个坑位,表示这里要有个任意字符)</span></div><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> ename <span class="keyword">FROM</span> scott.emp <span class="keyword">WHERE</span> ename <span class="keyword">LIKE</span> <span class="string">'%A%'</span>) <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;<span class="number">2</span>; <span class="comment">--使用行号rownum的正确写法</span></div><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> scott.emp <span class="keyword">WHERE</span> empno <span class="keyword">in</span> (<span class="number">7844</span>, <span class="number">7839</span>,<span class="number">123</span>,<span class="number">456</span>); empno 在提供的一组可能之中,会将给出的范围内的全找到</div><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> scott.emp <span class="keyword">WHERE</span> comm <span class="keyword">IS</span> <span class="literal">NULL</span>; <span class="comment">---comm字段为空的数据...表示没有奖金,你开不开心...</span></div></pre></td></tr></table></figure>
-<h3 id="select-分组查询"><a href="#select-分组查询" class="headerlink" title="select 分组查询"></a>select 分组查询</h3><p><strong>语法结构:</strong>SELECT [组函数和分组的字段]…FROM 表名 GROUP BY[字段1],[字段2],…;<br><strong>注意事项:</strong><br>1.group by分组不能用列的别名;<br>2.Having子句可以过滤组函数结果或者分组的信息，并且写在group by子句后。<br>3.只要写了group by子句，在select子句的后面，只能有两种类型的表达式，一种是组函数，一种是出现在group by子句后面的列名。<br>4.没有出现在group by子句后面的列名不能出现在select子句中非组函数表达式中(一句话换个说法,同3)，但是出现在group by子句后面的列名可以不出现在select子句中非组合函数表达式中。<br>5.如果使用了where子句，那么所有参加分组计算的数据必须首先满足where子句指定的条件。<br>6.在默认情况下，系统按照group by子句中指定的列升序排列,但是可以使用order by子句指定新的排列顺序 by 后可选关键字为:升序 <code>ASC</code>&nbsp;降序<code>DESC</code>。<br>7.如果希望限制分组中的数据，那么可以使用having子句而不能使用where子句。即having中可以出现组函数而where不能出现组函数。<br>8.如果希望按照多个列分组，那么会在group by子句后面出现多个列名。这些列名称得顺序非常重要。因为不同的顺序有不同的结果。<br>9.分组函数是可以嵌套使用的,和其他常用的函数一样。</p>
+<h3 id="select-常用函数"><a href="#select-常用函数" class="headerlink" title="select 常用函数"></a>select 常用函数</h3><p>①      单行数学函数</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">函数/关键字</th>
+<th style="text-align:center">函数名</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">nvl(字段,x)</td>
+<td style="text-align:center">非常重要,如果某个字段允许为空,某行数据为空时,时不能参与运算的,这是就需要这个函数。如果字段值为空,则返还x</td>
+</tr>
+<tr>
+<td style="text-align:center">nvl2(字段,x,y)</td>
+<td style="text-align:center">字段值不为NULL，返回x,为NULL，返回y。x和y类型不同的话，y会转换为x的类型</td>
+</tr>
+<tr>
+<td style="text-align:center">abs(x)</td>
+<td style="text-align:center">返回x的绝对值</td>
+</tr>
+<tr>
+<td style="text-align:center">mod(y,x)</td>
+<td style="text-align:center">返回y除以x的余数，如果x为0则返回y</td>
+</tr>
+<tr>
+<td style="text-align:center">sign(x)</td>
+<td style="text-align:center">检查x的正负，如果x为负，返回-1，为正返回1，0返回0</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">trunc(x,[,y])</td>
+<td style="text-align:center">截取数字。如y省略，则截去x的小数部分；y为负，截小数点前y位；为正，截小数点后y位</td>
+</tr>
+<tr>
+<td style="text-align:center">round(x,[,y])</td>
+<td style="text-align:center">四舍五入，y省略，四舍五入到整数位；y为负，则到小数点前y位，y为正，则到小数点后y位</td>
+</tr>
+<tr>
+<td style="text-align:center">ceil(x)</td>
+<td style="text-align:center">返回大于等于x的最小整数</td>
+</tr>
+<tr>
+<td style="text-align:center">floor(x)</td>
+<td style="text-align:center">返回小于等于x的最大整数</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">ln(x)</td>
+<td style="text-align:center">返回x的自然对数，x不能为0</td>
+</tr>
+<tr>
+<td style="text-align:center">log(y,x)</td>
+<td style="text-align:center">返回以y为底的对数，y不能为0</td>
+</tr>
+<tr>
+<td style="text-align:center">exp(x)</td>
+<td style="text-align:center">返回e的x次幂</td>
+</tr>
+<tr>
+<td style="text-align:center">power(y,x)</td>
+<td style="text-align:center">返回以y为底的x次幂，y和x可为任意数字，y为负，x必须为正</td>
+</tr>
+<tr>
+<td style="text-align:center">sqrt(x)</td>
+<td style="text-align:center">返回x的平方根，x必须大于0</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">sin(x)</td>
+<td style="text-align:center">返回x的正弦值</td>
+</tr>
+<tr>
+<td style="text-align:center">sinh(x)</td>
+<td style="text-align:center">返回x的双正弦值</td>
+</tr>
+<tr>
+<td style="text-align:center">cos(x)</td>
+<td style="text-align:center">返回x的余弦值</td>
+</tr>
+<tr>
+<td style="text-align:center">cosh(x)</td>
+<td style="text-align:center">返回x的双余弦值</td>
+</tr>
+<tr>
+<td style="text-align:center">acos(x)</td>
+<td style="text-align:center">返回x的反余弦值</td>
+</tr>
+<tr>
+<td style="text-align:center">asin(x)</td>
+<td style="text-align:center">返回x的反正弦值</td>
+</tr>
+<tr>
+<td style="text-align:center">atan(x)</td>
+<td style="text-align:center">返回x的反正切值</td>
+</tr>
+<tr>
+<td style="text-align:center">atan2(x,y)</td>
+<td style="text-align:center">返回数字x除以y的反正切值，y不能为0</td>
+</tr>
+<tr>
+<td style="text-align:center">tan(x)</td>
+<td style="text-align:center">返回x的正切值</td>
+</tr>
+<tr>
+<td style="text-align:center">tanh(x)</td>
+<td style="text-align:center">返回x的双正切值</td>
+</tr>
+</tbody>
+</table>
+<p>②      日期/字符串函数<br>Oracle中，日期和时间是一起存储的，其数据类型是date或者timestamp。<br>&nbsp;&nbsp;&nbsp;&nbsp;1.date可以存储世纪、年、月、日、时、分、秒<br>&nbsp;&nbsp;&nbsp;&nbsp;2.timestamp除了以上还可以存储带小数的秒、时区,精确到秒后6位</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数名</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">to_char(日期,格式化字符串)</td>
+<td style="text-align:center">把日期或数字转换为字符串<code>select ename,to_char(hiredate,&#39;YYYY-MM-DD HH12-MM-SS:&#39;) from scott.emp;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">to_date(日期字符串,日期格式化字符串)</td>
+<td style="text-align:center">把字符串转换为日期类型    <code>select to_date(&#39;2006-05-01&#39;, &#39;YYYY-MM-DD HH24-MI-SS&#39;) from dual;格式：yyyy-mm-dd hh24(12):mi:ss  注意分钟为MI区别与to_char()</code></td>
+</tr>
+<tr>
+<td style="text-align:center">add_months(日期,n)</td>
+<td style="text-align:center">返回比日期d大n个月的日期，参数n可以是任意整数。<code>select  sysdate ，add_months(sysdate,3),add_months(sysdate,-2) from dual;--sysdate为当前系统时间</code></td>
+</tr>
+<tr>
+<td style="text-align:center">last_day(日期)</td>
+<td style="text-align:center">返回指定日期对应月份的最后一天</td>
+</tr>
+<tr>
+<td style="text-align:center">months_between(第一个日期,第二个日期)</td>
+<td style="text-align:center">计算的是第一个日期减去第二个日期的月份，反之得到的是负的月份</td>
+</tr>
+<tr>
+<td style="text-align:center">trunc()</td>
+<td style="text-align:center">功能强大,可以用来截取时间(小功能之一).详情<a href="http://baike.baidu.com/link?url=reS2SbEDpgHjbhiUvmM9kc5HEnw8UFm5uStbpqLtkOY7asBlHL1-PbBs3MyQbkLTLg3tzpj0UROfh3bCHgAlHmDnsHNCz8rsH_kspIoIO5i" target="_blank" rel="external">trunc函数</a></td>
+</tr>
+<tr>
+<td style="text-align:center">next_day()</td>
+<td style="text-align:center">返回与指定日期在同一个星期或之后一个星期内的，你所要求的星期天数的确切日期。星期日 = 1,  星期一 = 2,  星期二 = 3,  星期三 = 4,  星期四 = 5,  星期五 = 6,  星期六 = 7,</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">concat(字串1,字串2)</td>
+<td style="text-align:center">返回拼接后的字串</td>
+</tr>
+<tr>
+<td style="text-align:center">upper(字串)</td>
+<td style="text-align:center">返回全大写的字串</td>
+</tr>
+<tr>
+<td style="text-align:center">initcap(字串)</td>
+<td style="text-align:center">返回首字母大写的字串</td>
+</tr>
+<tr>
+<td style="text-align:center">lower(字串)</td>
+<td style="text-align:center">返回全小写的字串</td>
+</tr>
+<tr>
+<td style="text-align:center">length(字串)</td>
+<td style="text-align:center">计算指定字串字符长度,按字符计算,中文也算一个字符句号,请自行百度<code>LENGTHB</code>,<code>LENGTHC</code>,<code>LENGTH2``LENGTH4</code><a href="http://blog.csdn.net/tswisdom/article/details/8225471" target="_blank" rel="external">几个函数的区别</a></td>
+</tr>
+<tr>
+<td style="text-align:center">ltrim(字串x,字串y)</td>
+<td style="text-align:center">按照y中的字符一个一个截掉x中的字符，并且是从左边开始执行的，只要遇到y中有的字符, x中的字符都会被截掉, 直到在x的字符中遇到y中没有的字符为止函数命令才结束。<strong>敲黑板了:</strong>将字串y中的字符逐个拆开,构成一个集合,再去字串x中从左到右逐个筛选,如果在y中有则继续,直到第一次遇到了y中没有的<strong>异类</strong>,筛选结束,返回字串x中从异类开始的后续字串.</td>
+</tr>
+<tr>
+<td style="text-align:center">rtrim(字串x,字串y)</td>
+<td style="text-align:center">与楼上是双胞胎,但是各奔东西,这个向左,楼上向右,什么?不好理解,有R右手起,有L左手起</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> </div><div class="line">to_char(<span class="keyword">sysdate</span>,<span class="string">'yyyy/mm'</span>)||<span class="string">'/01'</span> firstday,</div><div class="line">to_char(<span class="keyword">last_day</span>(<span class="keyword">sysdate</span>),<span class="string">'yyyy/mm/dd'</span>) lastday </div><div class="line"><span class="keyword">FROM</span> dual;</div><div class="line"></div><div class="line"><span class="keyword">SELECT</span> trunc(<span class="keyword">sysdate</span>, ‘mm’)   <span class="keyword">FROM</span>   dual  //返回当月第一天.</div><div class="line"><span class="keyword">SELECT</span> trunc(<span class="keyword">sysdate</span>,<span class="string">'yy'</span>) <span class="keyword">FROM</span> dual  <span class="comment">--2011-1-1   //返回当年第一天</span></div><div class="line"></div><div class="line"><span class="keyword">SELECT</span> </div><div class="line">    months_between(<span class="string">'17-9月-2013'</span>, <span class="string">'17-9月-2013'</span>) <span class="keyword">as</span> 第一个结果,<span class="comment">--结果为0</span></div><div class="line">    months_between(<span class="string">'17-10月-2013'</span>,<span class="string">'17-8月-2013'</span>) <span class="keyword">as</span> 第二个结果,<span class="comment">--结果为2</span></div><div class="line">    months_between(<span class="string">'17-8月-2013'</span>,<span class="string">'17-10月-2013'</span>) <span class="keyword">as</span> 第三个结果   <span class="comment">--结果为-2</span></div><div class="line"> <span class="keyword">FROM</span> dual</div></pre></td></tr></table></figure>
+<h3 id="select-分组查询"><a href="#select-分组查询" class="headerlink" title="select 分组查询"></a>select 分组查询</h3><p><strong>语法结构:</strong>SELECT [组函数和分组的字段]…FROM 表名 GROUP BY[字段1],[字段2],…;<br><strong>注意事项:</strong><br><strong>1.  </strong>group by分组不能用列的别名;<br><strong>2.  </strong>Having子句可以过滤组函数结果或者分组的信息，并且写在group by子句后。<br><strong>3.  </strong>只要写了group by子句，在select子句的后面，只能有两种类型的表达式，一种是组函数，一种是出现在group by子句后面的列名。<br><strong>4.  </strong>没有出现在group by子句后面的列名不能出现在select子句中非组函数表达式中(一句话换个说法,同3)，但是出现在group by子句后面的列名可以不出现在select子句中非组合函数表达式中。<br><strong>5.  </strong>如果使用了where子句，那么所有参加分组计算的数据必须首先满足where子句指定的条件。<br><strong>6.  </strong>在默认情况下，系统按照group by子句中指定的列升序排列,但是可以使用order by子句指定新的排列顺序 by 后可选关键字为:升序 <code>ASC</code>&nbsp;降序<code>DESC</code>。<br><strong>7.  </strong>如果希望限制分组中的数据，那么可以使用having子句而不能使用where子句。即having中可以出现组函数而where不能出现组函数。<br><strong>8.  </strong>如果希望按照多个列分组，那么会在group by子句后面出现多个列名。这些列名称得顺序非常重要。因为不同的顺序有不同的结果。<br><strong>9.  </strong>分组函数是可以嵌套使用的,和其他常用的函数一样。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">常用统计函数</th>
 <th style="text-align:center">含义</th>
 </tr>
 </thead>
@@ -739,6 +934,67 @@
 </tbody>
 </table>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> deptno <span class="keyword">AS</span> 部门编号,</div><div class="line"><span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> 部门人数,</div><div class="line"><span class="keyword">min</span>(sal) <span class="keyword">AS</span> 部门最低工资,</div><div class="line"><span class="keyword">max</span>(sal) <span class="keyword">AS</span> 部门最高工资,<span class="comment">--- 函数名大小写真滴没啥区别,各位看客自己怎么写随意啦啦啦啦啦</span></div><div class="line"><span class="keyword">round</span>(<span class="keyword">avg</span>(sal),<span class="number">2</span>) <span class="keyword">AS</span> 部门平均工资,</div><div class="line"><span class="keyword">SUM</span>(sal) 部门工资总和 <span class="keyword">FROM</span> scott.emp </div><div class="line"><span class="keyword">WHERE</span> deptno <span class="keyword">IN</span> (<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>) <span class="comment">--一共就三个部门,全选上了</span></div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> deptno </div><div class="line"><span class="keyword">HAVING</span> <span class="keyword">sum</span>(sal) &gt; <span class="number">9000</span>  <span class="comment">--用分组函数排除了一下低薪部门(人少而已,平均工资也不能代表部门薪资水平,记住了.贡献大头的不会是苦逼员工的T.T)</span></div><div class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">SUM</span>(sal) <span class="keyword">DESC</span>;</div></pre></td></tr></table></figure>
+<h3 id="select-子查询"><a href="#select-子查询" class="headerlink" title="select 子查询"></a>select 子查询</h3><p><strong>语法结构:</strong> SELECT 字段…FROM [子查询||表名] WHERE[子查询] HAVING [子查询]<br><strong>注意事项:</strong><br><strong>0. </strong>子查询可以单独提出来试运行的,多为一个简单的查询语句.<br><strong>1. </strong>子查询在查询前执行一次,主查询使用子查询的结果作为条件。<br><strong>2. </strong>子查询要用括号括起来；<br><strong>3. </strong>将子查询放在比较运算符的右边（增强可读性）,看起来会爽一些…<br><strong>4. </strong>只有在执行top-N分析时，子查询中才需要使用order  by<br><strong>5. </strong>按子查询结果集可以分为 <strong>单行单列</strong>,<strong>单行多列</strong>,<strong>多行单列</strong>,<strong>多行多列</strong>。<br><strong>6. </strong>子查询常出现在 <code>FROM</code>, <code>WHERE</code>, <code>HAVING</code>语句中<br><strong>7. </strong><code>WHERE</code>中: 子查询结果集一般都是单行单列数据,单行多列,多行单列。(<strong>即不是一张表</strong>)<br><strong>8. </strong><code>HAVING</code>中: 子查询结果集都是单行单列数据(<strong>即一个数据</strong>),同时使用了统计函数<br><strong>9. </strong><code>FROM</code>中: 一般是多行多列,可以按照一张数据表(<strong>即临时表</strong>)。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">1.单行单列子查询</div><div class="line"><span class="keyword">SELECT</span> ename,deptno <span class="keyword">FROM</span> scott.emp</div><div class="line"><span class="keyword">WHERE</span> deptno = </div><div class="line">(<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> scott.dept <span class="keyword">where</span> loc = <span class="string">'NEW YORK'</span>); <span class="comment">---子查询结果为一个部门编号</span></div><div class="line">2.单行多列子查询</div><div class="line"><span class="keyword">SELECT</span> ename,deptno <span class="keyword">FROM</span> scott.emp</div><div class="line"><span class="keyword">WHERE</span> deptno <span class="keyword">IN</span> </div><div class="line">(<span class="keyword">SELECT</span> deptno <span class="keyword">FROM</span> scott.dept <span class="keyword">WHERE</span> loc <span class="keyword">LIKE</span> <span class="string">'%A%'</span>); <span class="comment">---子查询结果为多个部门编号</span></div><div class="line">3.多列多行子查询</div><div class="line"><span class="keyword">SELECT</span> deptno,ename,sal <span class="keyword">FROM</span> scott.emp</div><div class="line"><span class="keyword">WHERE</span> (deptno,sal) <span class="keyword">in</span></div><div class="line">(<span class="keyword">SELECT</span> deptno,<span class="keyword">MAX</span>(sal) <span class="keyword">FROM</span> scott.emp <span class="keyword">GROUP</span> <span class="keyword">BY</span> deptno);<span class="comment">---结果为多行多列</span></div><div class="line">4.from中内联视图子查询</div><div class="line"><span class="keyword">SELECT</span> ename,job,sal,<span class="keyword">ROWNUM</span> <span class="keyword">FROM</span></div><div class="line">(<span class="keyword">SELECT</span> ename,job,sal <span class="keyword">FROM</span> scott.emp <span class="keyword">ORDER</span> <span class="keyword">BY</span> sal)</div><div class="line"><span class="keyword">WHERE</span> <span class="keyword">ROWNUM</span> &lt;= <span class="number">5</span>;</div><div class="line">5.having使用子查询</div><div class="line"><span class="keyword">SELECT</span> deptno,job,<span class="keyword">avg</span>(sal) <span class="keyword">FROM</span> scott.emp <span class="keyword">GROUP</span> <span class="keyword">BY</span> deptno,job</div><div class="line"><span class="keyword">HAVING</span> <span class="keyword">avg</span>(sal)&gt;</div><div class="line">(<span class="keyword">SELECT</span> sal <span class="keyword">FROM</span> scott.emp <span class="keyword">WHERE</span> ename=<span class="string">'SMITH'</span>);<span class="comment">--平均工资比SMITH高的部门和工作的员工</span></div></pre></td></tr></table></figure></p>
+<h4 id="多行子查询常用关键字"><a href="#多行子查询常用关键字" class="headerlink" title="多行子查询常用关键字"></a>多行子查询常用关键字</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">关键字</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">in</td>
+<td style="text-align:center">某个字段值在子查询结果集中存在,则匹配,相当于<code>=any</code></td>
+</tr>
+<tr>
+<td style="text-align:center">not in</td>
+<td style="text-align:center">某个字段值不在子查询中 <code>&lt;&gt;all</code></td>
+</tr>
+<tr>
+<td style="text-align:center">exists</td>
+<td style="text-align:center">用于检查子查询是否至少会返回一行数据，该子查询实际上并不返回任何数据，而是返回值True或False,来指定行的存在</td>
+</tr>
+<tr>
+<td style="text-align:center">not exits</td>
+<td style="text-align:center">与exists作用相反</td>
+</tr>
+<tr>
+<td style="text-align:center">some</td>
+<td style="text-align:center">相当于子结果集使用or串起来的比较从句</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;all</td>
+<td style="text-align:center">大于最大值</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;all</td>
+<td style="text-align:center">小于最小值</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;any</td>
+<td style="text-align:center">大于最小值,比最小的大就可以了</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;any</td>
+<td style="text-align:center">小于最大值</td>
+</tr>
+</tbody>
+</table>
+<p>上述关键字会遇到的<strong>坑</strong>,<a href="http://blog.csdn.net/kkdelta/article/details/7468850" target="_blank" rel="external">防坑参考链接</a></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">IN:</div><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> scott.emp <span class="keyword">WHERE</span> empno <span class="keyword">IN</span> (<span class="number">7844</span>, <span class="number">7839</span>,<span class="number">123</span>,<span class="number">456</span>); </div><div class="line">empno 在提供的一组可能之中,会将给出的范围内的全找到</div><div class="line">exists:</div><div class="line"><span class="keyword">SELECT</span> ename,sal,deptno <span class="keyword">FROM</span> scott.emp </div><div class="line"><span class="keyword">WHERE</span> <span class="keyword">EXISTS</span> (<span class="keyword">select</span> deptno <span class="keyword">from</span> scott.dept <span class="keyword">where</span> emp.deptno&gt;<span class="number">10</span>);</div><div class="line"><span class="comment">--将emp每行的deptno 与子查询的deptno相比较,选出子查询为真的行</span></div><div class="line"></div><div class="line">说明:</div><div class="line">EXISTS(包括 NOT EXISTS )子句的返回值是一个BOOL值。 </div><div class="line">EXISTS内部有一个子查询语句(<span class="keyword">SELECT</span> ... FROM...)， 我将其称为EXIST的内查询语句。</div><div class="line">其内查询语句返回一个结果集。 <span class="keyword">EXISTS</span>子句根据其内查询语句的结果集空或者非空，返回一个布尔值。</div><div class="line">一种通俗的可以理解为：将外查询表的每一行，代入内查询作为检验，</div><div class="line">如果内查询返回的结果取非空值，则<span class="keyword">EXISTS</span>子句返回<span class="literal">TRUE</span>，这一行行可作为外查询的结果行，否则不能作为结果。</div><div class="line">																</div><div class="line">&gt;<span class="keyword">any</span>:</div><div class="line"><span class="keyword">SELECT</span> empno,ename,job,sal <span class="keyword">FROM</span> scott.emp </div><div class="line"><span class="keyword">WHERE</span> sal &gt;<span class="keyword">ANY</span>(<span class="keyword">SELECT</span> sal <span class="keyword">FROM</span> scott.emp <span class="keyword">wHERE</span> job=<span class="string">'MANAGER'</span>);</div><div class="line">相当于:</div><div class="line"><span class="keyword">SELECT</span> empno,ename,job,sal <span class="keyword">FROM</span> scott.emp </div><div class="line"><span class="keyword">WHERE</span> sal &gt; (<span class="keyword">SELECT</span> <span class="keyword">min</span>(sal) <span class="keyword">FROM</span> scott.emp <span class="keyword">GROUP</span> <span class="keyword">BY</span> job <span class="keyword">HAVING</span> job = <span class="string">'MANAGER'</span>);</div><div class="line">也等价:</div><div class="line">先查出job为MANAGER的薪资,然后用or拼接条件</div><div class="line"><span class="keyword">SELECT</span> sal <span class="keyword">FROM</span> scott.emp <span class="keyword">WHERE</span> job=<span class="string">'MANAGER'</span>;<span class="comment">--1</span></div><div class="line"><span class="keyword">SELECT</span> emp.empno,emp.ename,emp.job,emp.sal <span class="keyword">FROM</span> scott.emp </div><div class="line"><span class="keyword">WHERE</span> sal &gt;<span class="number">2975</span> <span class="keyword">or</span> sal&gt;<span class="number">2850</span> <span class="keyword">or</span> sal&gt;<span class="number">2450</span>;      <span class="comment">--2</span></div><div class="line">三种方法,逼格立见...要向高级程序员进阶...多学,多写高质量代码~(≧▽≦)~啦啦啦</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="多表查询-—参考链接"><a href="#多表查询-—参考链接" class="headerlink" title="多表查询 —参考链接"></a>多表查询 —<a href="http://www.cnblogs.com/jpwpp/p/6272705.html" target="_blank" rel="external">参考链接</a></h3><h4 id="多个结果集并集-union"><a href="#多个结果集并集-union" class="headerlink" title="多个结果集并集 union"></a>多个结果集并集 union</h4><h4 id="多个结果集差集-not-in"><a href="#多个结果集差集-not-in" class="headerlink" title="多个结果集差集 not in"></a>多个结果集差集 not in</h4><h4 id="交叉链接-笛卡尔积-cross-join"><a href="#交叉链接-笛卡尔积-cross-join" class="headerlink" title="交叉链接(笛卡尔积)  cross join"></a>交叉链接(笛卡尔积)  cross join</h4><h4 id="多个结果集交集"><a href="#多个结果集交集" class="headerlink" title="多个结果集交集"></a>多个结果集交集</h4><h5 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h5><h5 id="左外链接"><a href="#左外链接" class="headerlink" title="左外链接"></a>左外链接</h5><h5 id="右外链接"><a href="#右外链接" class="headerlink" title="右外链接"></a>右外链接</h5><h5 id="全连接"><a href="#全连接" class="headerlink" title="全连接"></a>全连接</h5><hr>
+<h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><p>视图（View）实际上是一张或者多张表上的预定义查询，这些表称为基表。从视图中 查询信息与从表中查询信息的方法完全相同。只需要简单的 SELECT…FROM 即可。<br>视图具有以下优点：<br><strong>1.</strong>   可以限制用户只能通过视图检索数据。这样就可以对最终用户屏蔽建表时底层的基表。<br><strong>2.</strong>   可以将复杂的查询保存为视图。可以对最终用户屏蔽一定的复杂性。<br><strong>3.</strong>   限制某个视图只能访问基表中的部分列或者部分行的特定数据。这样可以实现一定 的安全性。<br><strong>4.</strong>   从多张基表中按一定的业务逻辑抽出用户关心的部分，形成一张虚拟表。<br><strong>语法结构：创建视图</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> [<span class="keyword">OR</span> <span class="keyword">REPLACE</span>] <span class="comment">--创建或修改视图</span></div><div class="line">[&#123;<span class="keyword">FORCE</span>|NOFORCE&#125;]   <span class="comment">--是否需要有基表才能创建视图</span></div><div class="line"><span class="keyword">VIEW</span> view_name 		<span class="comment">--视图名字</span></div><div class="line"><span class="keyword">AS</span>		<span class="comment">--关键字,把视图名作为下面select的结果集当中一个视图(虚表)</span></div><div class="line"><span class="keyword">SELECT</span> 查询             <span class="comment">--视图要求展现的东西</span></div><div class="line">[<span class="keyword">WITH</span> <span class="keyword">READ</span> <span class="keyword">ONLY</span> <span class="keyword">CONSTRAINT</span>]<span class="comment">----设置能否通过视图修改基表,默认是可以的,索引最好加上这句话,</span></div><div class="line"> <span class="comment">-- 使视图只读。这样你好,我好,大家好...不让多个基表,很容易将字段弄混..慢慢拍错去吧.</span></div></pre></td></tr></table></figure></p>
+<p><strong>语法解析：</strong><br><strong>1. </strong> OR REPLACE：如果视图已经存在，则替换旧视图。<br><strong>2. </strong> FORCE：即使基表不存在，也可以创建该视图，但是该视图不能正常使用，当基表 创建成功后，视图才能正常使用。<br><strong>3. </strong> NOFORCE：如果基表不存在，无法创建视图，该项是默认选项。<br><strong>4. </strong> WITH READ ONLY：默认可以通过视图对基表执行增删改操作，但是有很多在基表上 的限制（比如：基表中某列不能为空，但是该列没有出现在视图中，则不能通过视 图执行 insert 操作），WITH READ ONLY 说明视图是只读视图，不能通过该视图进行 增删改操作。现实开发中，基本上不通过视图对表中的数据进行增删改操作。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">先是拼凑出满足视图要求的查询语句:做一张员工emp表信息+部门工作地loc的表,且员工是工龄小于35年的员工.</div><div class="line"><span class="keyword">SELECT</span> empno,emp.ename, job,hiredate,sal,comm,loc </div><div class="line"><span class="keyword">FROM</span> scott.emp,scott.dept</div><div class="line"><span class="keyword">WHERE</span> emp.deptno = dept.deptno <span class="keyword">AND</span> months_between(<span class="keyword">sysdate</span>,hiredate)/<span class="number">12</span>&lt;<span class="number">35</span>;</div><div class="line">有了上面的临时表了,下面就可以复制粘贴创建视图了</div><div class="line"><span class="comment">--创建视图</span></div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> </div><div class="line"><span class="keyword">VIEW</span> EMPDETAIL</div><div class="line"><span class="keyword">AS</span>                <span class="comment">-----复制粘贴之前的select语句到下面</span></div><div class="line"><span class="keyword">SELECT</span> empno,emp.ename, job,hiredate,sal,comm,loc </div><div class="line"><span class="keyword">FROM</span> scott.emp,scott.dept</div><div class="line"><span class="keyword">WHERE</span> emp.deptno = dept.deptno <span class="keyword">AND</span> months_between(<span class="keyword">sysdate</span>,hiredate)/<span class="number">12</span>&lt;<span class="number">35</span> <span class="comment">---这里没有分号,没有分号,没有分号</span></div><div class="line"><span class="keyword">WITH</span> <span class="keyword">READ</span> <span class="keyword">ONLY</span>;   <span class="comment">-----视图结束</span></div><div class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> EMPDETAIL;<span class="comment">---查看视图数据</span></div></pre></td></tr></table></figure></p>
+<p><strong>删除视图</strong><br>删除视图可以使用<strong><code>DROP VIEW  视图名称</code></strong>，删除视图不会影响基表的数据。</p>
+<hr>
+<h1 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h1><p><strong>触发器参数</strong><br>SQLserver inserted deleted<br>PL/SQL  :new :old<br>MySQl </p>
+<hr>
+<h1 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h1><p><strong>语法结构：</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">CREATE SEQUENCE sequence_name </div><div class="line">[START WITH num]          --设置序列起始值</div><div class="line">[INCREMENT BY n]          --设置步长为n,任意N可为正负整数,但不能为浮点数</div><div class="line">[MAXVALUE num|NOMAXVALUE] --设置最大值</div><div class="line">[MINVALUE num|NOMINVALUE] --设置最小值</div><div class="line">[CYCLE|NOCYCLE]           --是否循环</div><div class="line">[CACHE num|NOCACHE]       --设置预先缓存序列数/或不缓存</div><div class="line">;---------------------------创建序列语句结束</div><div class="line">``` </div><div class="line">**语法解析：**</div><div class="line">① START WITH：从某一个整数开始，升序默认值是 1，降序默认值是-1。</div><div class="line">② INCREMENT BY：增长数。如果是正数则升序生成，如果是负数则降序生成。升序默 认值是 1，降序默认值是-1。</div><div class="line">③ MAXVALUE：指最大值。</div><div class="line">④ NOMAXVALUE：这是最大值的默认选项，升序的最大值是：1027，降序默认值是-1。</div><div class="line">⑤ MINVALUE：指最小值。</div><div class="line">⑥ NOMINVALUE：这是默认值选项，升序默认值是 1，降序默认值是-1026。</div><div class="line">⑦ CYCLE：表示如果升序达到最大值后，从最小值重新开始；如果是降序序列，达到最 小值后，从最大值重新开始。</div><div class="line">⑧ NOCYCLE：表示不重新开始，序列升序达到最大值、降序达到最小值后就报错。默 认 NOCYCLE。</div><div class="line">⑨ CACHE：使用 CACHE 选项时，该序列会根据序列规则预生成一组序列号。保留在内 存中，当使用下一个序列号时，可以更快的响应。当内存中的序列号用完时，系统 再生成一组新的序列号，并保存在缓存中，这样可以提高生成序列号的效率。Oracle 默认会生产 20 个序列号。</div><div class="line">⑩ NOCACHE：不预先在内存中生成序列号。</div><div class="line">⑪ 序列创建之后，可以通过序列对象的 `CURRVAL` 和 `NEXTVAL`, 两个“伪列”分别访问该序 列的当前值和下一个值。</div><div class="line">``` sql</div><div class="line">示例1:创建一个从 1 开始，默认最大值，每次增长 1 的序列，要求 NOCYCLE，缓存中 有 30 个预先分配好的序列号。</div><div class="line">代码演示：生成序列号</div><div class="line">CREATE SEQUENCE MYSEQ</div><div class="line">MINVALUE 1</div><div class="line">START WITH 1</div><div class="line">NOMAXVALUE</div><div class="line">INCREMENT BY 1</div><div class="line">NOCYCLE</div><div class="line">CACHE 30;</div><div class="line">SELECT MYSEQ.NEXTVAL FROM DUAL; NEXTVAL值为1</div><div class="line">SELECT MYSEQ.NEXTVAL FROM DUAL;  NEXTVAL值为2</div><div class="line">SELECT MYSEQ.CURRVAL FROM DUAL; CURRVAL值为2</div><div class="line">示例2: 序列与表结合使用,实现自增列.</div><div class="line">	--创建表</div><div class="line">CREATE TABLE xulie</div><div class="line">( ID number(4) PRIMARY KEY, --用来自增的列</div><div class="line">  yname varchar2(10) NOT NULL</div><div class="line">);</div><div class="line">	--创建序列</div><div class="line">CREATE SEQUENCE myeq</div><div class="line">START WITH 1</div><div class="line">MINVALUE 1</div><div class="line">MAXVALUE 9999</div><div class="line">INCREMENT BY 1</div><div class="line">NOCYCLE</div><div class="line">NOCACHE;----序列结束</div><div class="line">	--插入数据时使用 序列伪列关键字</div><div class="line">INSERT INTO xulie VALUES (myeq.NEXTVAL,'小李子');---插入时使用伪列</div><div class="line">INSERT INTO xulie VALUES (myeq.NEXTVAL,'斯坦森');</div><div class="line">INSERT INTO xulie VALUES (myeq.NEXTVAL,'李子');</div><div class="line">SELECT * FROM xulie;</div><div class="line">	--使用触发器自动添加序列号</div><div class="line">CREATE OR REPLACE TRIGGER xlInsert</div><div class="line">BEFORE INSERT</div><div class="line">ON xulie</div><div class="line">FOR EACH ROW</div><div class="line"> BEGIN</div><div class="line">    SELECT myeq.NEXTVAL INTO :new.id from dual;--获取序列下一个值,并赋值给insert语句中的id字段</div><div class="line">    dbms_output.put_line('id 已经自增到'||myeq.currval);</div><div class="line"> END;--触发器结束</div><div class="line">	--触发Insert触发器  </div><div class="line">INSERT INTO xulie VALUES (2,'啦啦啦'); --因为触发器自动获取myeq序列的值,这个2形同虚设.</div><div class="line">SELECT * FROM xulie;  ---查看id变化</div></pre></td></tr></table></figure></p>
+<h2 id="修改删除序列"><a href="#修改删除序列" class="headerlink" title="修改删除序列"></a>修改删除序列</h2><p>使用 ALTER SEQUENCE 可以修改序列，在修改序列时有如下限制：<br><strong>1. </strong>不能修改序列的初始值。<br><strong>2. </strong>最小值不能大于当前值。<br><strong>3. </strong>最大值不能小于当前值。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">代码演示：序列修改和删除</div><div class="line">修改：</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">SEQUENCE</span> MYSEQ</div><div class="line">MAXVALUE <span class="number">10000</span></div><div class="line"><span class="keyword">MINVALUE</span> <span class="number">-300</span>   </div><div class="line">删除：</div><div class="line"><span class="keyword">DROP</span> <span class="keyword">SEQUENCE</span> MYSEQ;</div></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><h2 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h2><p>drop index UQ_ENAME_IDX</p>
 
       
     </div>
@@ -796,6 +1052,12 @@
             <a href="/tags/笔记/" rel="tag"># 笔记</a>
           
             <a href="/tags/Oracle/" rel="tag"># Oracle</a>
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+            <a href="/tags/SQL/" rel="tag"># SQL</a>
+          
+            <a href="/tags/PL-SQL/" rel="tag"># PL/SQL</a>
           
         </div>
       
@@ -909,7 +1171,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -956,7 +1218,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Oracle-简介"><span class="nav-number">1.</span> <span class="nav-text">Oracle 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-基本术语"><span class="nav-number">1.1.</span> <span class="nav-text">Oracle 基本术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据字典"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据文件"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制文件"><span class="nav-number">1.1.3.</span> <span class="nav-text">控制文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志文件"><span class="nav-number">1.1.4.</span> <span class="nav-text">日志文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表空间"><span class="nav-number">1.1.5.</span> <span class="nav-text">表空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#段"><span class="nav-number">1.1.6.</span> <span class="nav-text">段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区"><span class="nav-number">1.1.7.</span> <span class="nav-text">区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据块"><span class="nav-number">1.1.8.</span> <span class="nav-text">数据块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#账户类型"><span class="nav-number">1.1.9.</span> <span class="nav-text">账户类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键约束"><span class="nav-number">1.1.10.</span> <span class="nav-text">键约束</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型示例"><span class="nav-number">1.2.1.</span> <span class="nav-text">数据类型示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL语言"><span class="nav-number">2.</span> <span class="nav-text">SQL语言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令行查询数据库参数"><span class="nav-number">3.</span> <span class="nav-text">命令行查询数据库参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看数据库信息"><span class="nav-number">3.1.</span> <span class="nav-text">查看数据库信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看数据库名"><span class="nav-number">3.1.1.</span> <span class="nav-text">查看数据库名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询当前数据库实例名"><span class="nav-number">3.1.2.</span> <span class="nav-text">查询当前数据库实例名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表操作"><span class="nav-number">3.2.</span> <span class="nav-text">表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据表"><span class="nav-number">3.2.1.</span> <span class="nav-text">创建数据表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据插入操作"><span class="nav-number">3.2.2.</span> <span class="nav-text">数据插入操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据更新操作"><span class="nav-number">3.2.3.</span> <span class="nav-text">数据更新操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据删除操作"><span class="nav-number">3.2.4.</span> <span class="nav-text">数据删除操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DELETE-nbsp-nbsp-nbsp-nbsp-语法结构-DELETE-FROM-表名-WHERE-条件"><span class="nav-number">3.2.4.1.</span> <span class="nav-text">DELETE         语法结构: DELETE FROM 表名  WHERE 条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TRUNCATE-nbsp-nbsp-语法结构-TRUNCATE-TABLE-表名"><span class="nav-number">3.2.4.2.</span> <span class="nav-text">TRUNCATE    语法结构: TRUNCATE TABLE 表名</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改表操作"><span class="nav-number">3.2.5.</span> <span class="nav-text">修改表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改表名"><span class="nav-number">3.2.5.1.</span> <span class="nav-text">修改表名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加字段"><span class="nav-number">3.2.5.2.</span> <span class="nav-text">添加字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除字段"><span class="nav-number">3.2.5.3.</span> <span class="nav-text">删除字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改字段属性"><span class="nav-number">3.2.5.4.</span> <span class="nav-text">修改字段属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改约束"><span class="nav-number">3.2.5.5.</span> <span class="nav-text">修改约束</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表数据查询语句-SELECT"><span class="nav-number">3.3.</span> <span class="nav-text">表数据查询语句 SELECT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#select-语法结构"><span class="nav-number">3.3.1.</span> <span class="nav-text">select 语法结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-运算符关键字"><span class="nav-number">3.3.2.</span> <span class="nav-text">select 运算符关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-分组查询"><span class="nav-number">3.3.3.</span> <span class="nav-text">select 分组查询</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Oracle-简介"><span class="nav-number">1.</span> <span class="nav-text">Oracle 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-基本术语"><span class="nav-number">1.1.</span> <span class="nav-text">Oracle 基本术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据字典"><span class="nav-number">1.1.1.</span> <span class="nav-text">数据字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据文件"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制文件"><span class="nav-number">1.1.3.</span> <span class="nav-text">控制文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志文件"><span class="nav-number">1.1.4.</span> <span class="nav-text">日志文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表空间"><span class="nav-number">1.1.5.</span> <span class="nav-text">表空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#段"><span class="nav-number">1.1.6.</span> <span class="nav-text">段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区"><span class="nav-number">1.1.7.</span> <span class="nav-text">区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据块"><span class="nav-number">1.1.8.</span> <span class="nav-text">数据块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#账户类型"><span class="nav-number">1.1.9.</span> <span class="nav-text">账户类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键约束"><span class="nav-number">1.1.10.</span> <span class="nav-text">键约束</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型示例"><span class="nav-number">1.2.1.</span> <span class="nav-text">数据类型示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL语言"><span class="nav-number">2.</span> <span class="nav-text">SQL语言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#手码代码之增删改查"><span class="nav-number">3.</span> <span class="nav-text">手码代码之增删改查</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库管理"><span class="nav-number">3.1.</span> <span class="nav-text">数据库管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看数据库名"><span class="nav-number">3.1.1.</span> <span class="nav-text">查看数据库名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询当前数据库实例名"><span class="nav-number">3.1.2.</span> <span class="nav-text">查询当前数据库实例名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表管理"><span class="nav-number">3.2.</span> <span class="nav-text">表管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据表—create"><span class="nav-number">3.2.1.</span> <span class="nav-text">创建数据表—create</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除表—drop"><span class="nav-number">3.2.2.</span> <span class="nav-text">删除表—drop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改表操作"><span class="nav-number">3.2.3.</span> <span class="nav-text">修改表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改表名"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">修改表名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加字段"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">添加字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除字段"><span class="nav-number">3.2.3.3.</span> <span class="nav-text">删除字段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改字段属性"><span class="nav-number">3.2.3.4.</span> <span class="nav-text">修改字段属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改约束"><span class="nav-number">3.2.3.5.</span> <span class="nav-text">修改约束</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据插入操作—insert"><span class="nav-number">3.2.4.</span> <span class="nav-text">数据插入操作—insert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据更新操作—update"><span class="nav-number">3.2.5.</span> <span class="nav-text">数据更新操作—update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据删除操作—delete"><span class="nav-number">3.2.6.</span> <span class="nav-text">数据删除操作—delete</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表数据查询语句-—select"><span class="nav-number">3.3.</span> <span class="nav-text">表数据查询语句 —select</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#select-语法结构"><span class="nav-number">3.3.1.</span> <span class="nav-text">select 语法结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-运算符关键字"><span class="nav-number">3.3.2.</span> <span class="nav-text">select 运算符关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-常用函数"><span class="nav-number">3.3.3.</span> <span class="nav-text">select 常用函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-分组查询"><span class="nav-number">3.3.4.</span> <span class="nav-text">select 分组查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-子查询"><span class="nav-number">3.3.5.</span> <span class="nav-text">select 子查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多行子查询常用关键字"><span class="nav-number">3.3.5.1.</span> <span class="nav-text">多行子查询常用关键字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多表查询-—参考链接"><span class="nav-number">3.3.6.</span> <span class="nav-text">多表查询 —参考链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多个结果集并集-union"><span class="nav-number">3.3.6.1.</span> <span class="nav-text">多个结果集并集 union</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多个结果集差集-not-in"><span class="nav-number">3.3.6.2.</span> <span class="nav-text">多个结果集差集 not in</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交叉链接-笛卡尔积-cross-join"><span class="nav-number">3.3.6.3.</span> <span class="nav-text">交叉链接(笛卡尔积)  cross join</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多个结果集交集"><span class="nav-number">3.3.6.4.</span> <span class="nav-text">多个结果集交集</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#内连接"><span class="nav-number">3.3.6.4.1.</span> <span class="nav-text">内连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#左外链接"><span class="nav-number">3.3.6.4.2.</span> <span class="nav-text">左外链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#右外链接"><span class="nav-number">3.3.6.4.3.</span> <span class="nav-text">右外链接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#全连接"><span class="nav-number">3.3.6.4.4.</span> <span class="nav-text">全连接</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视图"><span class="nav-number">4.</span> <span class="nav-text">视图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#触发器"><span class="nav-number">5.</span> <span class="nav-text">触发器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#序列"><span class="nav-number">6.</span> <span class="nav-text">序列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改删除序列"><span class="nav-number">6.1.</span> <span class="nav-text">修改删除序列</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引"><span class="nav-number">7.</span> <span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#删除索引"><span class="nav-number">7.1.</span> <span class="nav-text">删除索引</span></a></li></ol></li></ol></div>
                        
           </div>
           
