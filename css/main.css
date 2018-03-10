@@ -1718,7 +1718,11 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
+<<<<<<< HEAD
   background: #74ff90;
+=======
+  background: #2d25c1;
+>>>>>>> parent of 9cbc4a5... Site updated: 2017-03-28 23:17:28
 }
 .links-of-blogroll {
   font-size: 13px;
